@@ -1,4 +1,4 @@
-## Co-authorship Network
+# Co-authorship Network
 
 ## Discente: João Igor Ramos de Lima
 
