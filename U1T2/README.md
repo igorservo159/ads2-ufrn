@@ -6,6 +6,8 @@
 
 ### Algorithms and Data Structure II (DCA3702)
 
+### Video explaining the activity
+
 **Getting UFRN articles data :globe_with_meridians:**
 
 Searching in [Scopus](https://www.elsevier.com/products/scopus) database of articles and citations, I got the scopus.csv file containing information about articles published by authors from UFRN. The data was filtered by the fields of **computer science**, **engineering**, and **mathematics**, focusing on the following topics: **neural networks**, **artificial intelligence**, and **machine learning**.
