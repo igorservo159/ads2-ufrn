@@ -27,6 +27,14 @@ The .csv file includes the following columns:
 
 Complete graph of the whole .csv file
 <center><img width="max-width" src="imgs/graph.png"></center>
+Graph density: 0.012327998680085795
+
+Number of authors: 551
 
 Subgraph using only articles that have at least 20 authors involved
 <center><img width="max-width" src="imgs/subgraph.png"></center>
+
+
+Subgraph density: 0.39572192513368987
+
+Number of authors: 34
