@@ -24,5 +24,9 @@ The .csv file includes the following columns:
 
 **Coauthorship Network [:globe_with_meridians:](Coauthorship_Network.ipynb)**
 
-<center><img width="max-width" src="imgs/graph.png">test</center>
+
+Complete graph of the whole .csv file
+<center><img width="max-width" src="imgs/graph.png"></center>
+
+Subgraph using only articles that have at least 20 authors involved
 <center><img width="max-width" src="imgs/subgraph.png"></center>
