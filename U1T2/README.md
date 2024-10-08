@@ -6,6 +6,8 @@
 
 #### Algorithms and Data Structure II (DCA3702)
 
+**Getting UFRN articles data :globe_with_meridians:**
+
 Searching in [Scopus](https://www.elsevier.com/products/scopus) database of articles and citations, I got the scopus.csv file containing information about articles published by authors from UFRN. The data was filtered by the fields of **computer science**, **engineering**, and **mathematics**, focusing on the following topics: **neural networks**, **artificial intelligence**, and **machine learning**.
 
 The .csv file includes the following columns:
@@ -14,4 +16,8 @@ The .csv file includes the following columns:
 - Article title
 - Year of publication
 
-<center><img width="max-width" src="scopus_csv.png"></center>
+<center><img width="max-width" src="imgs/scopus_csv.png"></center>
+
+**Testing NetworkX**
+
+<center><img width="max-width" src="imgs/networkX_test.png"></center>
