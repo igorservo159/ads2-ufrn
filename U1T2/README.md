@@ -1,4 +1,4 @@
-# Co-authorship Network :busts_in_silhouette:
+# UFRN co-authorship Network :busts_in_silhouette:
 
 ## Objective: Create and manipulate a co-authorship network using real data extracted from the Scopus platform
 
