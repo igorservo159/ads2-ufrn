@@ -38,7 +38,7 @@ Completed graph of the whole .csv file using nxviz python library for graph visu
 
 > Number of authors: 551
 
-Subgraph using only articles that have at least 20 authors involved
+Subgraph using only nodes that have at least 20 neighbors, that are articles with a huge quantity of researchers involved.
 <center><img width="max-width" src="imgs/subgraph.png"></center>
 
 > Subgraph density: 0.39572192513368987
