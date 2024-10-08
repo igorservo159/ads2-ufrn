@@ -20,12 +20,13 @@ The .csv file includes the following columns:
 
 
 **Testing NetworkX [:thought_balloon:](networkX_test.ipynb)**
+Down bellow we have an example of a graph developed using only networkX python library.
 
 <center><img width="max-width" src="imgs/networkX_test.png"></center>
 
 **Coauthorship Network [:globe_with_meridians:](Coauthorship_Network.ipynb)**
 
-Using the scopus.csv file, we can creat a graph with python with the following piece of code.
+Using the scopus.csv file, we can creat a graph with python with the following piece of [code](Coauthorship_Network.ipynb).
 
 <center><img width="max-width" src="imgs/carbon.png"></center>
 
@@ -38,7 +39,6 @@ Completed graph of the whole .csv file
 
 Subgraph using only articles that have at least 20 authors involved
 <center><img width="max-width" src="imgs/subgraph.png"></center>
-
 
 > Subgraph density: 0.39572192513368987
 
