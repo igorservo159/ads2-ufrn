@@ -46,3 +46,5 @@ Subgraph using only nodes that have at least 20 neighbors. It can be useful to f
 > Number of authors: 34
 
 It is possible to observe a notable increase in the density of the subgraph compared to the original graph. This happens because the subgraph contains only nodes with 20 or more neighbors, unlike the original graph, which has nodes with very few neighbors. Thus decreasing the value of the network density.
+
+Therefore, since this is a dense subgraph, we have information about authors with significant participation in articles and academic works by other researchers.
