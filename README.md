@@ -1,8 +1,9 @@
 # AEDII_UFRN
-Este repositório contém as atividades e projetos da disciplina de Algoritmos e Estruturas de Dados II do curso de bacharelado em engenharia da computação na UFRN.
 
-Discente: João Igor Ramos de Lima
+## This repository contains the activities and projects of the Algorithms and Data Structures II discipline of the bachelor's degree in computer engineering at UFRN.
 
-Curso: Engenharia da Computação
+### Student: João Igor Ramos de Lima
 
-Disciplina: Algoritmos e Estruturas de Dados II
+#### Computer Engeneering
+
+#### Algorithms and Data Structure II (DCA3702)

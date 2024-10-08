@@ -1,5 +1,7 @@
-# Atividade 1
+# Activity 1
 
-## Ler os quatro primeiros capítulos do livro-texto da disciplina, The Atlas For The Aspiring Network Scientist.
+## Read the first four chapters of the course textbook, The Atlas For The Aspiring Network Scientist.
 
-### Responder aos exercícios correspondentes aos capítulos 2, 3 e 4.
+### Answer the exercises of chapters 2, 3 and 4.
+
+#### Algorithms and Data Structure II (DCA3702)
