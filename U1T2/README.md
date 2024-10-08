@@ -18,6 +18,10 @@ The .csv file includes the following columns:
 
 <center><img width="max-width" src="imgs/scopus_csv.png"></center>
 
+Using this .csv file, we can creat a graph with python with the following piece of code.
+
+<center><img width="max-width" src="imgs/carbon.png"></center>
+
 **Testing NetworkX [:thought_balloon:](networkX_test.ipynb)**
 
 <center><img width="max-width" src="imgs/networkX_test.png"></center>
