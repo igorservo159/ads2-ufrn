@@ -6,7 +6,7 @@
 
 #### Algorithms and Data Structure II (DCA3702)
 
-Searching in [Scopus](https://www.elsevier.com/products/scopus) database of articles and citations, I got a .csv file containing information about articles published by authors from UFRN. The data was filtered by the fields of **computer science**, **engineering**, and **mathematics**, focusing on the following topics: **neural networks**, **artificial intelligence**, and **machine learning**.
+Searching in [Scopus](https://www.elsevier.com/products/scopus) database of articles and citations, I got the scopus.csv file containing information about articles published by authors from UFRN. The data was filtered by the fields of **computer science**, **engineering**, and **mathematics**, focusing on the following topics: **neural networks**, **artificial intelligence**, and **machine learning**.
 
 The .csv file includes the following columns:
 - Author names
@@ -14,3 +14,4 @@ The .csv file includes the following columns:
 - Article title
 - Year of publication
 
+<center><img width="800" src="scopus_csv.png"></center>
