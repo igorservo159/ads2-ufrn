@@ -4,6 +4,6 @@
 
 ### Student: João Igor Ramos de Lima :mortar_board:
 
-#### Computer Engeneering :computer:
+### Computer Engeneering :computer:
 
-#### Algorithms and Data Structure II (DCA3702)
+### Algorithms and Data Structure II (DCA3702)
