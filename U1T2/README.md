@@ -1,8 +1,8 @@
-# Co-authorship Network
+# Co-authorship Network :busts_in_silhouette:
 
 ## Objective: Create and manipulate a co-authorship network using real data extracted from the Scopus platform
 
-### Student: João Igor Ramos de Lima :smiley:
+### Student: João Igor Ramos de Lima :mortar_board:
 
 #### Algorithms and Data Structure II (DCA3702)
 
