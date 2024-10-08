@@ -38,7 +38,7 @@ Completed graph of the whole .csv file using nxviz python library for graph visu
 
 > Number of authors: 551
 
-Subgraph using only nodes that have at least 20 neighbors, that are articles with a huge quantity of researchers involved.
+Subgraph using only nodes that have at least 20 neighbors. It can be useful to find the reaserchers at UFRN that have a notable (20+ contributions) network in articles of a specific field of study.
 <center><img width="max-width" src="imgs/subgraph.png"></center>
 
 > Subgraph density: 0.39572192513368987
