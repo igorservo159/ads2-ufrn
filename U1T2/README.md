@@ -14,4 +14,4 @@ The .csv file includes the following columns:
 - Article title
 - Year of publication
 
-<center><img width="800" src="scopus_csv.png"></center>
+<center><img width="max-width" src="scopus_csv.png"></center>
