@@ -18,6 +18,8 @@ The .csv file includes the following columns:
 
 <center><img width="max-width" src="imgs/scopus_csv.png"></center>
 
-**Testing NetworkX**
+**[Testing NetworkX](networkX_test.ipynb)**
 
 <center><img width="max-width" src="imgs/networkX_test.png"></center>
+
+
