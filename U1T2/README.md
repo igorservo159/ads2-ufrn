@@ -25,16 +25,17 @@ The .csv file includes the following columns:
 **Coauthorship Network [:globe_with_meridians:](Coauthorship_Network.ipynb)**
 
 
-> Complete graph of the whole .csv file
+Complete graph of the whole .csv file
 <center><img width="max-width" src="imgs/graph.png"></center>
-Graph density: 0.012327998680085795
 
-Number of authors: 551
+> Graph density: 0.012327998680085795
 
-> Subgraph using only articles that have at least 20 authors involved
+> Number of authors: 551
+
+Subgraph using only articles that have at least 20 authors involved
 <center><img width="max-width" src="imgs/subgraph.png"></center>
 
 
-Subgraph density: 0.39572192513368987
+> Subgraph density: 0.39572192513368987
 
-Number of authors: 34
+> Number of authors: 34
