@@ -18,9 +18,6 @@ The .csv file includes the following columns:
 
 <center><img width="max-width" src="imgs/scopus_csv.png"></center>
 
-Using this .csv file, we can creat a graph with python with the following piece of code.
-
-<center><img width="max-width" src="imgs/carbon.png"></center>
 
 **Testing NetworkX [:thought_balloon:](networkX_test.ipynb)**
 
@@ -28,8 +25,11 @@ Using this .csv file, we can creat a graph with python with the following piece 
 
 **Coauthorship Network [:globe_with_meridians:](Coauthorship_Network.ipynb)**
 
+Using the scopus.csv file, we can creat a graph with python with the following piece of code.
 
-Complete graph of the whole .csv file
+<center><img width="max-width" src="imgs/carbon.png"></center>
+
+Completed graph of the whole .csv file
 <center><img width="max-width" src="imgs/graph.png"></center>
 
 > Graph density: 0.012327998680085795
