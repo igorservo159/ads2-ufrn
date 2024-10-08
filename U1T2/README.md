@@ -31,7 +31,7 @@ Using the scopus.csv file, we can creat a graph with python with the following p
 
 <center><img width="max-width" src="imgs/carbon.png"></center>
 
-Completed graph of the whole .csv file
+Completed graph of the whole .csv file using nxviz python library for graph visualization.
 <center><img width="max-width" src="imgs/graph.png"></center>
 
 > Graph density: 0.012327998680085795
