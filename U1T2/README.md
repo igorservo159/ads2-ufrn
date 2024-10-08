@@ -20,6 +20,7 @@ The .csv file includes the following columns:
 
 
 **Testing NetworkX [:thought_balloon:](networkX_test.ipynb)**
+
 Down bellow we have an example of a graph developed using only networkX python library.
 
 <center><img width="max-width" src="imgs/networkX_test.png"></center>
