@@ -30,3 +30,16 @@ When calculating the assortativity of the complete graph of the medicines networ
 
 Although this is not a very high value, considering that assortativity can range from 0 to 1, this graph demonstrates a certain tendency to share more active ingredients among medications within the same regulatory category. The presence of thousands of medications, and consequently thousands of nodes in the graph, reinforces this observation. This finding suggests that regulatory frameworks may influence the formulation and distribution of medications, potentially guiding prescribers in selecting therapeutic options that share similar active components. Understanding the dynamics of such relationships can provide valuable insights for regulatory authorities and pharmaceutical stakeholders, helping to optimize medication management practices and enhance patient safety.
 
+### Do medicines of the same company tend to share more active ingredients? What about the ones that share the same therapeutic class?
+- **Assortativity by Therapeutic Class**: 
+  - The moderate value of **0.405** suggests that medications categorized under the same therapeutic class tend to share a greater number of active ingredients.
+  
+- **Assortativity by Company**: 
+  - The low value of **0.030** indicates that there is no significant tendency for medications from the same company to share active ingredients.
+
+- **Combined Assortativity**: 
+  - The average value of **0.218** reflects a tendency for medicines to share active ingredients when considering either the therapeutic class or the company.
+
+### Conclusion
+The analysis reveals that medicines of the same therapeutic class are more likely to share active ingredients compared to those from the same company. This highlights the importance of therapeutic classifications in understanding the relationships among different medications, while company affiliation seems to play a lesser role in determining shared active ingredients.
+
