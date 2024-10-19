@@ -5,5 +5,3 @@
 ### Student: João Igor Ramos de Lima :mortar_board:
 
 ### Algorithms and Data Structure II (DCA3702)
-
-something else
