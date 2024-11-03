@@ -1,13 +1,14 @@
 # Creating an OSMnx Drive Network of Natal-RN City :busts_in_silhouette:
 
-This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
-
 ## Objective: Analyze assortativity in the medicine network
 
 ### Student: João Igor Ramos de Lima :mortar_board:
 
 ### Algorithms and Data Structure II (DCA3702)
 
+## Project Description
+
+This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Metrics Analyzed
 
