@@ -1,6 +1,6 @@
 # Creating an OSMnx Network of Natal-RN City :busts_in_silhouette:
 
-## This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
+#### This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Objective: Analyze assortativity in the medicine network
 
