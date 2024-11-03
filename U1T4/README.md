@@ -1,6 +1,6 @@
 # Creating an OSMnx Network of Natal-RN City :busts_in_silhouette:
 
-### This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
+## This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Objective: Analyze assortativity in the medicine network
 
@@ -94,7 +94,8 @@ Therefore, Natal’s drive network forms a single Giant Connected Component (GCC
 
 Considering Natal is a unique GCC, we can inquire:
 - **Is the network of Natal a Strongly Connected Component (SCC)?**
--
+- **Is the network of Natal a Weakly Connected Component (WCC)?**
+
 #### Methodology
 
 Using NetworkX’s functions `is_strongly_connected` and `is_weakly_connected`, we will analyze the network. Specifically:
