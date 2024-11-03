@@ -27,17 +27,17 @@ The .csv file includes the following columns:
 
 ## Testing NetworkX [:thought_balloon:](networkX_test.ipynb)
 
-### Down bellow we have an example of a graph developed using only networkX python library.
+Down bellow we have an example of a graph developed using only networkX python library.
 
 <center><img width="max-width" src="imgs/networkX_test.png"></center>
 
 ## Coauthorship Network [:globe_with_meridians:](Coauthorship_Network.ipynb)
 
-### Using the scopus.csv file, we can creat a graph with python with the following piece of [code](Coauthorship_Network.ipynb).
+Using the scopus.csv file, we can creat a graph with python with the following piece of [code](Coauthorship_Network.ipynb).
 
 <center><img width="max-width" src="imgs/carbon.png"></center>
 
-### Complete graph of the whole .csv file using nxviz python library for graph visualization.
+Complete graph of the whole .csv file using nxviz python library for graph visualization.
 <center><img width="max-width" src="imgs/graph.png"></center>
 
 > Graph density: 0.012327998680085795
