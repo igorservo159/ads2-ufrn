@@ -84,8 +84,10 @@ print(nx.is_connected(MultiGraph))
 print(nx.number_connected_components(MultiGraph))
 
 ```
+#### Findings
 
-After running these functions, we find that the city of Natal’s network forms a single Giant Connected Component (GCC). This result indicates that:
+After running these functions, we find that:
+- The network is **fully connected**.
+- **Only one connected component** exists.
 
-    The network is fully connected.
-    Only one connected component exists.
+Therefore, Natal’s network forms a single Giant Connected Component (GCC).
