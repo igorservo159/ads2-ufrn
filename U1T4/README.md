@@ -1,4 +1,6 @@
-# Study of Assortativity in a Network of Medicines and Active Ingredients :busts_in_silhouette:
+# Creating an OSMnx Network of Natal-RN City :busts_in_silhouette:
+
+This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Objective: Analyze assortativity in the medicine network
 
@@ -6,9 +8,6 @@
 
 ### Algorithms and Data Structure II (DCA3702)
 
-# Creating an OSMnx Network of Natal-RN City
-
-This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Metrics Analyzed
 
