@@ -172,3 +172,11 @@ These values reveal insights into the local interconnectedness and layout of eac
 - **Pitimbu (0.0639)**: Pitimbu has a noticeably higher clustering coefficient than both Natal and Candelária. This indicates that intersections in Pitimbu are more likely to form closed loops or clusters, suggesting a layout with more localized connectivity, typical of residential areas with organic street patterns.
 
 These differences in clustering coefficients provide a snapshot of the road network’s design across different parts of Natal. While Natal and Candelária exhibit a more planned, grid-like structure, Pitimbu shows signs of a denser, more interconnected local layout.
+
+#### Explanation of Low Clustering Coefficients
+
+The low clustering coefficients observed for Natal (0.0219), Candelária (0.0194), and Pitimbu (0.0639) can be attributed to how **OSMnx** defines nodes in its graphs. 
+
+In OSMnx, nodes typically represent **street intersections** or **dead-ends** rather than buildings, smaller paths, or other local features that might increase connectivity within a neighborhood. This approach emphasizes the main traffic network rather than including all minor connections, resulting in fewer closed loops or "triangular" connections between intersections, which in turn leads to a lower clustering coefficient.
+
+This structure accurately reflects the layout of urban areas, where main streets and intersections often have a grid-like pattern with minimal clustering. Residential neighborhoods like Pitimbu, which show a slightly higher coefficient, may still have more local loops due to the organic layout of smaller streets. However, the focus on major intersections means that clustering remains low across all areas.
