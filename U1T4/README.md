@@ -1,6 +1,6 @@
 # Creating an OSMnx Network of Natal-RN City :busts_in_silhouette:
 
-This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
+### This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Objective: Analyze assortativity in the medicine network
 
@@ -41,9 +41,9 @@ This analysis provides valuable information for urban planning, transportation m
 
 OSMnx is a powerful Python library that allows users to download, model, and analyze street networks and other geospatial data from OpenStreetMap (OSM). It simplifies the process of working with OSM data by providing tools to create network graphs, visualize them, and calculate various metrics related to connectivity and accessibility. OSMnx is widely used in urban planning, transportation studies, and geographic analysis, enabling researchers and practitioners to gain insights into urban mobility and infrastructure through detailed network analysis.
 
-### Creating a Simple Network
+## Creating a Simple Network
 
-It is quite simple to create a network for almost any location accessible via OpenStreetMap. 
+#### It is quite simple to create a network for almost any location accessible via OpenStreetMap. 
 
 To get started, simply import the `osmnx` library along with `networkx`, and generate a directed multigraph (which may have more than one edge connecting the same two nodes) using the `graph_from_place` function from OSMnx, passing the name of the place as an argument. You can then visualize the graph using the `plot_graph` function.
 
@@ -58,3 +58,34 @@ ox.plot_graph(G)
 ```
 
 ![Natal Network](./natal_network.png)
+
+## Network Connectivity Analysis
+
+Now that we have successfully plotted the city of Natal's network graph, we can proceed to analyze some of its connectivity metrics. In this section, we will address questions related to the overall connectivity and structure of the city’s network.
+
+### Connectivity Questions
+
+To understand the city’s connectivity, we’ll investigate the following:
+- **Is the network of Natal completely connected?**
+- **If the network is not fully connected, how many distinct components does it contain?**
+
+#### Methodology
+
+Using NetworkX’s functions `is_connected` and `number_connected_components`, we will analyze the network to identify any distinct connected components within it. Specifically:
+- **`is_connected`**: This function allows us to check whether the entire network is a single connected component.
+- **`number_connected_components`**: If the network is not fully connected, this function will tell us the exact number of disconnected components present.
+
+```python
+
+MultiGraph = ox.convert.to_undirected(MultiDiGraph) # Undirected Multigraph to use is_connected and number_connected_components
+
+print(nx.is_connected(MultiGraph))
+
+print(nx.number_connected_components(MultiGraph))
+
+```
+
+After running these functions, we find that the city of Natal’s network forms a single Giant Connected Component (GCC). This result indicates that:
+
+    The network is fully connected.
+    Only one connected component exists.
