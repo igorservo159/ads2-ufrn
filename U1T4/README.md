@@ -57,3 +57,5 @@ G = ox.graph_from_place(place_name, network_type='drive')
 ox.plot_graph(G)
 
 ![Natal Network](./natal_network.png)
+
+
