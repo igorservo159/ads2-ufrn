@@ -59,7 +59,7 @@ ox.plot_graph(G)
 
 ![Natal Network](./natal_network.png)
 
-## Network Connectivity Analysis
+## Network Analysis
 
 Now that we have successfully plotted the city of Natal's network graph, we can proceed to analyze some of its connectivity metrics. In this section, we will address questions related to the overall connectivity and structure of the city’s network.
 
@@ -79,9 +79,7 @@ Using NetworkX’s functions `is_connected` and `number_connected_components`, w
 
 MultiGraph = ox.convert.to_undirected(MultiDiGraph) # Undirected Multigraph to use is_connected and number_connected_components
 
-print(nx.is_connected(MultiGraph))
-
-print(nx.number_connected_components(MultiGraph))
+nx.is_connected(MultiGraph), nx.number_connected_components(MultiGraph)
 
 ```
 #### Findings
@@ -90,4 +88,27 @@ After running these functions, we find that:
 - The network is **fully connected**.
 - **Only one connected component** exists.
 
-Therefore, Natal’s network forms a single Giant Connected Component (GCC).
+Therefore, Natal’s drive network forms a single Giant Connected Component (GCC), which implies that all areas in the city are reachable from one another, making the network robust and accessible. This structure ensures that any part of the city can be accessed from any other, potentially enhancing navigability and connectivity.
+
+### Connections Strength
+
+Considering Natal is a unique GCC, we can inquire:
+- **Is the network of Natal a Strongly Connected Component (SCC)?**
+-
+#### Methodology
+
+Using NetworkX’s functions `is_strongly_connected` and `is_weakly_connected`, we will analyze the network. Specifically:
+- **`is_strongly_connected`**: This function allows us to check whether a subgraph network is a SCC.
+- **`is_weakly_connected`**: This function allows us to check whether a subgraph network is a WCC. **Is the network of Natal a Weakly Connected Component (WCC)?**
+
+```python
+
+nx.is_strongly_connected(MultiDiGraph), nx.is_weakly_connected(MultiDiGraph)
+
+```
+
+#### Findings
+
+After running these functions, we find that the network is **weakly connected**.
+
+It means Natal's drive map is a Weakly Connected Component (WCC), so  all areas are accessible when ignoring road directions. However, some routes may be one-way, preventing two-way travel on certain streets.
