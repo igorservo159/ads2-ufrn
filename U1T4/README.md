@@ -1,6 +1,6 @@
-# Creating an OSMnx Network of Natal-RN City :busts_in_silhouette:
+# Creating an OSMnx Drive Network of Natal-RN City :busts_in_silhouette:
 
-This notebook generates a network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
+This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Objective: Analyze assortativity in the medicine network
 
@@ -33,7 +33,7 @@ This notebook generates a network for the city of Natal, RN, using OSMnx and con
 
 - **WCC (Weakly Connected Components)**: Highlights components where each node is accessible by ignoring direction, providing a sense of general connectivity.
 
-- **Clustering Coefficient**: Measures the degree to which nodes in the network tend to cluster together, suggesting how well-connected neighborhoods or regions are.
+- **Clustering Coefficient**: Measures the degree to which nodes in the network tend to cluster together, suggesting how well-connected neighborhoods or regions are. We can think of the clustering coefficient as a measure of the "stardom".
 
 This analysis provides valuable information for urban planning, transportation management, and improving access within the city.
 
@@ -61,7 +61,7 @@ ox.plot_graph(G)
 
 ## Network Analysis
 
-Now that we have successfully plotted the city of Natal's network graph, we can proceed to analyze some of its connectivity metrics. In this section, we will address questions related to the overall connectivity and structure of the city’s network.
+Now that we have successfully plotted Natal's drive network graph, we can proceed to analyze some of its connectivity metrics. In this section, we will address questions related to the overall connectivity and structure of the city’s network.
 
 ### Connectivity Questions
 
@@ -113,3 +113,62 @@ nx.is_strongly_connected(MultiDiGraph), nx.is_weakly_connected(MultiDiGraph)
 After running these functions, we find that the network is **weakly connected**.
 
 It means Natal's drive map is a Weakly Connected Component (WCC), so  all areas are accessible when ignoring road directions. However, some routes may be one-way, preventing two-way travel on certain streets.
+
+
+### Clustering Coefficient
+
+Given the structure of Natal’s drive network, we can examine what the Clustering Coefficient metric reveals about its layout:
+
+- **Does a high Clustering Coefficient suggest any specific characteristics of the network?**
+  - A high clustering coefficient implies that intersections (nodes) frequently form closed loops or triangles. This suggests a more organic layout, which may be common in older or residential areas where roads are more likely to form local clusters.
+
+- **What does a low Clustering Coefficient indicate in this context?**
+  - A low clustering coefficient suggests a simpler, grid-like layout with fewer closed loops. This pattern is often seen in newer or planned urban areas, where roads connect intersections without forming excessive loops, prioritizing straightforward navigation.
+
+What can the Average Clustering Coefficient tell us about:
+
+- **The overall structure of the city’s network?**
+- **The structure of a specific area?**
+
+#### Methodology
+
+Using NetworkX’s function `average_clustering`, we can answer these last ones. Specifically:
+- **`average_clustering`**: This function allows us to get avarage clustering of a network.
+
+```python
+
+Candelaria_location = "Candelária, Natal, RN, Brazil"
+Pitimbu_location = "Pitimbu, Natal, RN, Brazil"
+
+Candelaria = ox.graph_from_place(Candelaria_location, network_type='drive')
+Pitimbu = ox.graph_from_place(Pitimbu_location, network_type='drive')
+
+fig, ax = ox.plot_graph(Candelaria, bgcolor='white', node_color='red', edge_color='black', node_size=10, edge_linewidth=0.8)
+fig, ax = ox.plot_graph(Pitimbu, bgcolor='white', node_color='red', edge_color='black', node_size=10, edge_linewidth=0.8)
+
+print("Natal: ", nx.average_clustering(ox.convert.to_digraph(MultiDiGraph)))
+print("Candelária: ", nx.average_clustering(ox.convert.to_digraph(Candelaria)))
+print("Pitimbu: ", nx.average_clustering(ox.convert.to_digraph(Pitimbu)))
+
+```
+
+![Candelária Network](./candelaria_network.png)
+![Pitimbu Network](./pitimbu_network.png)
+
+
+#### Findings
+
+After calculating the clustering coefficients for the city of Natal and two of its neighborhoods, Pitimbu and Candelária, we find the following values:
+- **Natal**: 0.0219
+- **Candelária**: 0.0194
+- **Pitimbu**: 0.0639
+
+These values reveal insights into the local interconnectedness and layout of each area:
+
+- **Natal (0.0219)**: The low clustering coefficient for the entire city indicates a primarily grid-like, efficient layout with limited local loops, suggesting that the road network is designed for direct navigation without excessive clustering of intersections.
+
+- **Candelária (0.0194)**: Candelária's clustering coefficient is similar to Natal’s overall value, implying a comparable road structure with minimal localized loops. This suggests an emphasis on straightforward connectivity, likely prioritizing major routes over local clusters.
+
+- **Pitimbu (0.0639)**: Pitimbu has a noticeably higher clustering coefficient than both Natal and Candelária. This indicates that intersections in Pitimbu are more likely to form closed loops or clusters, suggesting a layout with more localized connectivity, typical of residential areas with organic street patterns.
+
+These differences in clustering coefficients provide a snapshot of the road network’s design across different parts of Natal. While Natal and Candelária exhibit a more planned, grid-like structure, Pitimbu shows signs of a denser, more interconnected local layout.
