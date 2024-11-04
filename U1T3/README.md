@@ -2,6 +2,8 @@
 
 ## Objective: Analyze assortativity in the medicine network
 
+This project investigates assortativity in a network of medicines and active ingredients, using data from ANVISA to test hypotheses on how regulatory category, therapeutic class, and company affiliation influence shared active ingredients. By constructing and visualizing graphs, we assess assortativity measures to determine whether medicines within the same regulatory category or therapeutic class tend to share more active components, compared to medicines from the same company. These analyses aim to reveal patterns that inform therapeutic strategies and support regulatory and pharmaceutical decision-making.
+
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
 > ### Department of Computer Engineering and Automation  
@@ -18,10 +20,6 @@
 > SPDX-License-Identifier: BSD-2-Clause
 
 ---
-
-## Project Description
-
-This project investigates assortativity in a network of medicines and active ingredients, using data from ANVISA to test hypotheses on how regulatory category, therapeutic class, and company affiliation influence shared active ingredients. By constructing and visualizing graphs, we assess assortativity measures to determine whether medicines within the same regulatory category or therapeutic class tend to share more active components, compared to medicines from the same company. These analyses aim to reveal patterns that inform therapeutic strategies and support regulatory and pharmaceutical decision-making.
 
 ## Do medicines in the same regulatory category tend to share more active ingredients?
 
