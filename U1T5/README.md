@@ -17,7 +17,7 @@ This project aims to evaluate mobility around UFRN to determine optimal location
 
 One way to answer it is to take into account the following network statistics:
 
-### Metrics
+### Centrality Metrics
 
 - **Degree Centrality:** Number of connections of each neighborhood node.
 - **Closeness Centrality:** Calculates the average distance from each node to all other nodes, assessing overall accessibility.
@@ -57,18 +57,74 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 
 ![UFRN Bike Network Graph](./ufrn_network.png)
 
-### Answering the Key Question with the Degree Centrality metric
+### Answering the Key Question with Centrality Metrics
 
-To address this, we can utilize the **NetworkX** function **`nx.degree_centrality`**. This function will get us a dictionary data structure with all nodes and their degree centrality values. Then we can restrict it to identify and highlight the nodes with the highest values.
+To address the question, we analyze the **top central nodes** in the network using four centrality metrics: **Degree**, **Closeness**, **Betweenness**, and **Eigenvector**. By focusing on the top nodes for each metric, we can identify key nodes and intersections between these metrics.
+
+The steps involve calculating each centrality measure and selecting the top 10 nodes for each. Intersections between metrics highlight nodes that exhibit high centrality in multiple measures, indicating their prominent role in network connectivity.
 
 ```python
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 
 degree_centrality = nx.degree_centrality(ufrn)
+closeness_centrality = nx.closeness_centrality(ufrn)
+betweenness_centrality = nx.betweenness_centrality(ufrn)
+eigenvector_centrality = nx.eigenvector_centrality(ox.convert.to_digraph(ufrn), max_iter=1000)
 
-top_10_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:10]
+top_10_degree = set(sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:10])
+top_10_closeness = set(sorted(closeness_centrality, key=closeness_centrality.get, reverse=True)[:10])
+top_10_betweenness = set(sorted(betweenness_centrality, key=betweenness_centrality.get, reverse=True)[:10])
+top_10_eigenvector = set(sorted(eigenvector_centrality, key=eigenvector_centrality.get, reverse=True)[:10])
 
-node_colors = ['blue' if node in top_10_nodes else 'grey' for node in ufrn.nodes]
-node_sizes = [100 if node in top_10_nodes else 10 for node in ufrn.nodes]
+top_degree_closeness = top_10_degree & top_10_closeness
+top_degree_betweenness = top_10_degree & top_10_betweenness
+top_degree_eigenvector = top_10_degree & top_10_eigenvector
+top_closeness_betweenness = top_10_closeness & top_10_betweenness
+top_closeness_eigenvector = top_10_closeness & top_10_eigenvector
+top_betweenness_eigenvector = top_10_betweenness & top_10_eigenvector
+top_all_metrics = top_10_degree & top_10_closeness & top_10_betweenness & top_10_eigenvector
+
+node_colors = []
+node_sizes = []
+
+for node in ufrn.nodes:
+    if node in top_all_metrics:
+        node_colors.append('black')
+        node_sizes.append(250)
+    elif node in top_degree_closeness:
+        node_colors.append('cyan')
+        node_sizes.append(200)
+    elif node in top_degree_betweenness:
+        node_colors.append('purple')
+        node_sizes.append(200)
+    elif node in top_closeness_betweenness:
+        node_colors.append('orange')
+        node_sizes.append(200)
+    elif node in top_degree_eigenvector:
+        node_colors.append('pink')
+        node_sizes.append(200)
+    elif node in top_closeness_eigenvector:
+        node_colors.append('brown')
+        node_sizes.append(200)
+    elif node in top_betweenness_eigenvector:
+        node_colors.append('lime')
+        node_sizes.append(200)
+    elif node in top_10_degree:
+        node_colors.append('blue')
+        node_sizes.append(100)
+    elif node in top_10_closeness:
+        node_colors.append('red')
+        node_sizes.append(100)
+    elif node in top_10_betweenness:
+        node_colors.append('green')
+        node_sizes.append(100)
+    elif node in top_10_eigenvector:
+        node_colors.append('yellow')
+        node_sizes.append(100)
+    else:
+        node_colors.append('grey')
+        node_sizes.append(10)
 
 fig, ax = ox.plot_graph(
     ufrn,
@@ -76,9 +132,32 @@ fig, ax = ox.plot_graph(
     node_color=node_colors,
     edge_color='black',
     node_size=node_sizes,
-    edge_linewidth=0.8
+    edge_linewidth=0.8,
+    show=False,
+    close=False
 )
 
-```
+legend_handles = [
+    mpatches.Patch(color='blue', label='Top Degree Centrality'),
+    mpatches.Patch(color='red', label='Top Closeness Centrality'),
+    mpatches.Patch(color='green', label='Top Betweenness Centrality'),
+    mpatches.Patch(color='yellow', label='Top Eigenvector Centrality'),
+    mpatches.Patch(color='cyan', label='Top Degree & Closeness'),
+    mpatches.Patch(color='purple', label='Top Degree & Betweenness'),
+    mpatches.Patch(color='orange', label='Top Closeness & Betweenness'),
+    mpatches.Patch(color='pink', label='Top Degree & Eigenvector'),
+    mpatches.Patch(color='brown', label='Top Closeness & Eigenvector'),
+    mpatches.Patch(color='lime', label='Top Betweenness & Eigenvector'),
+    mpatches.Patch(color='black', label='Top Degree, Closeness, Betweenness & Eigenvector')
+]
 
-![Highest Degree Centrality Nodes](./highest_degree_centrality_nodes.png)
+plt.legend(
+    handles=legend_handles, 
+    loc='upper right', 
+    fontsize='x-small',  
+    frameon=True, 
+    markerscale=0.7
+)
+plt.show()
+```
+![Centrality Metrics](./centrality_metrics.png)
