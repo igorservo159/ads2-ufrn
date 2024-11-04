@@ -65,10 +65,10 @@ To address this, we can utilize the **NetworkX** function **`nx.degree_centralit
 
 degree_centrality = nx.degree_centrality(ufrn)
 
-top_50_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:50]
+top_10_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:10]
 
-node_colors = ['blue' if node in top_50_nodes else 'grey' for node in ufrn.nodes]
-node_sizes = [100 if node in top_50_nodes else 10 for node in ufrn.nodes]
+node_colors = ['blue' if node in top_10_nodes else 'grey' for node in ufrn.nodes]
+node_sizes = [100 if node in top_10_nodes else 10 for node in ufrn.nodes]
 
 fig, ax = ox.plot_graph(
     ufrn,
@@ -80,3 +80,5 @@ fig, ax = ox.plot_graph(
 )
 
 ```
+
+![Highest Degree Centrality Nodes](./highest_degree_centrality_nodes.png)
