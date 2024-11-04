@@ -51,7 +51,6 @@ Who constitutes the core and shell of the network?
 
 To address the problem, we can start creating a network graph representing the UFRN area, including nearby neighborhoods such as Candelária, Lagoa Nova, Capim Macio, and Nova Descoberta. We can achieve this using the **OSMnx** library in Python.
 
-> Imports used in the project
 
 ```python
 
@@ -61,7 +60,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 ```
-> UFRN bike simple graph network
 
 ```python
 
