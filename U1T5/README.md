@@ -2,9 +2,20 @@
 
 ## Objective: Analyze mobility for optimal placement of bike-sharing dock stations around UFRN
 
-### Student: João Igor Ramos de Lima :mortar_board:
-
-### Algorithms and Data Structure II (DCA3702)
+> ## Federal University of Rio Grande do Norte  
+> ## Technology Center  
+> ### Department of Computer Engineering and Automation  
+> #### Course: **Algorithms and Data Structure II (DCA3702)**  
+> #### Author: **João Igor Ramos de Lima:mortar_board:**
+>
+> This repository contains solutions to the tasks and exercises assigned in the Algorithms and Data Structure II (DCA3702) course.
+>
+> ### Contact
+> [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
+>
+> Copyright (c) 2024, João Igor Ramos de Lima.  
+> All rights reserved.   
+> SPDX-License-Identifier: BSD-2-Clause
 
 ---
 
@@ -42,10 +53,19 @@ Who constitutes the core and shell of the network?
 
 To address the problem, we can start creating a network graph representing the UFRN area, including nearby neighborhoods such as Candelária, Lagoa Nova, Capim Macio, and Nova Descoberta. We can achieve this using the **OSMnx** library in Python.
 
+> Imports used in the project
+
 ```python
 
 import osmnx as ox
 import networkx as nx
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+
+```
+> UFRN bike simple graph network
+
+```python
 
 ufrn_box = -5.82846, -5.84804, -35.21549, -35.19446
 
@@ -64,9 +84,6 @@ To address the question, we analyze the **top central nodes** in the network usi
 The steps involve calculating each centrality measure and selecting the top 10 nodes for each. Intersections between metrics highlight nodes that exhibit high centrality in multiple measures, indicating their prominent role in network connectivity.
 
 ```python
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 
 centrality_measures = {
     'degree': nx.degree_centrality(ufrn),
