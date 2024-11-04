@@ -1,7 +1,5 @@
 # AEDII_UFRN
 
-## This repository contains the activities and projects of the Algorithms and Data Structures II discipline of the bachelor's degree in computer engineering at UFRN.
-
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
 > ### Department of Computer Engineering and Automation  
