@@ -224,11 +224,11 @@ plt.show()
 
 > PDF Degree Distribution
 
-[PDF Degree Distribution](pdf_degree.png)
+![PDF Degree Distribution](pdf_degree.png)
 
 > CDF Degree Distribution
 
-[PDF Degree Distribution](cdf_degree.png)
+![PDF Degree Distribution](cdf_degree.png)
 
 
 The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](./centrality_metrics.png) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them ideal for meeting user demand efficiently.
