@@ -8,6 +8,8 @@
 
 ### [Video explaining the activity](https://www.loom.com/share/df95291120ad45559df213ba6507c54a?sid=85feec87-aa12-43b0-bc3e-e938c7372c01)
 
+---
+
 ## Project Description
 
 This project builds and analyzes a co-authorship network from Scopus data on UFRN-affiliated authors in computer science, engineering, and mathematics. Focusing on neural networks, artificial intelligence, and machine learning, the network visualizes collaborative relationships among researchers. Using NetworkX and nxviz libraries, we assess network structure and density, highlighting a subgraph of authors with 20+ connections to identify key contributors and influential research clusters at UFRN.
