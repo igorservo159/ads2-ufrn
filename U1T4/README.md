@@ -2,6 +2,8 @@
 
 ## Objective: Analyze assortativity in the medicine network
 
+This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
+
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
 > ### Department of Computer Engineering and Automation  
@@ -18,10 +20,6 @@
 > SPDX-License-Identifier: BSD-2-Clause
 
 ---
-
-## Project Description
-
-This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
 
 ## Metrics Analyzed
 
