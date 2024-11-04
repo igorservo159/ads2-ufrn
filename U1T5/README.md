@@ -58,6 +58,7 @@ import osmnx as ox
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from scipy.stats import gaussian_kde
 
 ```
 
