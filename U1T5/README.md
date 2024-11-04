@@ -164,4 +164,71 @@ plt.show()
 
 > UFRN Bike Network Graph with Centrality Metrics
 
+<a id="centrality-metrics"></a>
 ![Centrality Metrics](./centrality_metrics.png)
+
+### Using PDF and CDF analysis of node degrees to select optimal locations
+
+To determine the best locations for bike stations, we can analyze **node degrees** using two statistical tools: **PDF (Probability Density Function)** and **CDF (Cumulative Distribution Function)**. This approach helps identify highly connected nodes (hubs) and prioritize station placement for optimal coverage and accessibility.
+
+The steps involve the following:
+
+1. **Identify High-Degree Nodes (Hubs):** The **PDF of node degrees** reveals the distribution of connectivity within the network. Nodes with higher degrees represent hubs with more connections, indicating areas with potentially higher traffic. These nodes are strong candidates for bike stations, as they can serve more students and visitors efficiently.
+
+2. **Use the CDF to Select a Fraction of the Most Connected Nodes:** The **CDF allows for selecting specific percentiles** of nodes based on degree. For instance, choosing nodes above the 90th percentile (top 10%) ensures that bike stations are located in areas with significantly higher connectivity, maximizing their utility.
+
+```python
+
+degrees = [deg for _, deg in ufrn.degree()]
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+
+counts, bins, patches = ax1.hist(degrees, bins=range(min(degrees), max(degrees) + 1), 
+                                 density=True, alpha=0.6, color='blue', label='Degree Density')
+
+mean_deg = np.mean(degrees)
+std_deg = np.std(degrees)
+x = np.linspace(min(bins), max(bins), 100)
+p = norm.pdf(x, mean_deg, std_deg)
+ax1.plot(x, p, 'r', linewidth=2, label='Normal PDF Fit')
+
+ax1_twin = ax1.twinx()
+counts, bins, _ = ax1_twin.hist(degrees, bins=range(min(degrees), max(degrees) + 1), 
+                                alpha=0, color='blue')  
+ax1_twin.set_ylabel('Node Count', color='blue')
+ax1_twin.tick_params(axis='y', labelcolor='blue')
+ax1_twin.set_ylim(0, max(counts) * 1.1) 
+
+ax1.set_title('Degree Distribution with Fitted PDF')
+ax1.set_xlabel('Degree')
+ax1.set_ylabel('Density')
+ax1.legend(loc='upper right')
+ax1.grid(True, which='both', linestyle='--', linewidth=0.5)
+
+
+sorted_degrees = np.sort(degrees)
+cdf = np.arange(1, len(sorted_degrees) + 1) / len(sorted_degrees)
+
+ax2.plot(sorted_degrees, cdf, marker='o', linestyle='-', color='purple', label='Degree CDF')
+ax2.set_title('Degree Distribution CDF')
+ax2.set_xlabel('Degree')
+ax2.set_ylabel('Cumulative Probability')
+ax2.grid(True, which='both', linestyle='--', linewidth=0.5)
+ax2.legend(loc='lower right')
+
+plt.tight_layout()
+plt.show()
+
+```
+
+> PDF Degree Distribution
+
+[PDF Degree Distribution](pdf_degree.png)
+
+> CDF Degree Distribution
+
+[PDF Degree Distribution](cdf_degree.png)
+
+
+The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](./centrality_metrics.png) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them ideal for meeting user demand efficiently.
