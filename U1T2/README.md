@@ -8,7 +8,7 @@ This project builds and analyzes a co-authorship network from Scopus data on UFR
 > ## Technology Center  
 > ### Department of Computer Engineering and Automation  
 > #### Course: **Algorithms and Data Structure II (DCA3702)**  
-> #### Author: **João Igor Ramos de Lima:mortar_board:**
+> #### Author: **João Igor Ramos de Lima :mortar_board:**
 >
 > This repository contains solutions to the tasks and exercises assigned in the Algorithms and Data Structure II (DCA3702) course.
 >
