@@ -69,6 +69,8 @@ G = ox.graph_from_place(place_name, network_type='drive')
 ox.plot_graph(G)
 ```
 
+> Natal network graph
+
 ![Natal Network](./natal_network.png)
 
 ## Network Analysis
@@ -163,8 +165,12 @@ print("Candelária: ", nx.average_clustering(ox.convert.to_digraph(Candelaria)))
 print("Pitimbu: ", nx.average_clustering(ox.convert.to_digraph(Pitimbu)))
 
 ```
+> Candelária network graph
 
 ![Candelária Network](./candelaria_network.png)
+
+> Pitimbu network graph
+
 ![Pitimbu Network](./pitimbu_network.png)
 
 
