@@ -2,6 +2,8 @@
 
 ## Objective: Analyze mobility for optimal placement of bike-sharing dock stations around UFRN
 
+This project aims to evaluate mobility around UFRN to determine optimal locations for installing bike-sharing dock stations. The analysis will focus on identifying key neighborhoods around the university that could benefit from such stations and assessing strategic placement options.
+
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
 > ### Department of Computer Engineering and Automation  
@@ -18,10 +20,6 @@
 > SPDX-License-Identifier: BSD-2-Clause
 
 ---
-
-## Project Description
-
-This project aims to evaluate mobility around UFRN to determine optimal locations for installing bike-sharing dock stations. The analysis will focus on identifying key neighborhoods around the university that could benefit from such stations and assessing strategic placement options.
 
 ## Key Question
 **Where are the optimal locations for dock-station placement?**
