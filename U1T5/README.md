@@ -17,7 +17,7 @@ This project aims to evaluate mobility around UFRN to determine optimal location
 
 One way to answer it is to take into account the following network statistics:
 
-### Analysis Metrics
+### Metrics
 
 - **Degree Centrality:** Number of connections of each neighborhood node.
 - **Closeness Centrality:** Calculates the average distance from each node to all other nodes, assessing overall accessibility.
@@ -40,7 +40,7 @@ Who constitutes the core and shell of the network?
 
 ## Implementing UFRN Mobility Graph Network
 
-To address the problem, we will create a network graph representing the UFRN area, including nearby neighborhoods such as Candelária, Lagoa Nova, Capim Macio, and Nova Descoberta. We can achieve this using the **OSMnx** library in Python.
+To address the problem, we can start creating a network graph representing the UFRN area, including nearby neighborhoods such as Candelária, Lagoa Nova, Capim Macio, and Nova Descoberta. We can achieve this using the **OSMnx** library in Python.
 
 ```python
 
@@ -56,3 +56,27 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 ```
 
 ![UFRN Bike Network Graph](./ufrn_network.png)
+
+### Answering the Key Question with the Degree Centrality metric
+
+To address this, we can utilize the **NetworkX** function **`nx.degree_centrality`**. This function will get us a dictionary data structure with all nodes and their degree centrality values. Then we can restrict it to identify and highlight the nodes with the highest values.
+
+```python
+
+degree_centrality = nx.degree_centrality(ufrn)
+
+top_50_nodes = sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:50]
+
+node_colors = ['blue' if node in top_50_nodes else 'grey' for node in ufrn.nodes]
+node_sizes = [100 if node in top_50_nodes else 10 for node in ufrn.nodes]
+
+fig, ax = ox.plot_graph(
+    ufrn,
+    bgcolor='white',
+    node_color=node_colors,
+    edge_color='black',
+    node_size=node_sizes,
+    edge_linewidth=0.8
+)
+
+```
