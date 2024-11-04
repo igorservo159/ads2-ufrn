@@ -55,4 +55,4 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 
 ```
 
-[UFRN Bike Network Graph](./ufrn_network.png)
+![UFRN Bike Network Graph](./ufrn_network.png)
