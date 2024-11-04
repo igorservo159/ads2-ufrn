@@ -6,6 +6,8 @@
 
 ### Algorithms and Data Structure II (DCA3702)
 
+---
+
 ## Project Description
 
 This notebook generates a drive network for the city of Natal, RN, using OSMnx and conducts an analysis based on various network metrics. These metrics provide insights into the city's connectivity, accessibility, and overall network structure.
