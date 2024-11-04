@@ -64,67 +64,64 @@ To address the question, we analyze the **top central nodes** in the network usi
 The steps involve calculating each centrality measure and selecting the top 10 nodes for each. Intersections between metrics highlight nodes that exhibit high centrality in multiple measures, indicating their prominent role in network connectivity.
 
 ```python
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-degree_centrality = nx.degree_centrality(ufrn)
-closeness_centrality = nx.closeness_centrality(ufrn)
-betweenness_centrality = nx.betweenness_centrality(ufrn)
-eigenvector_centrality = nx.eigenvector_centrality(ox.convert.to_digraph(ufrn), max_iter=1000)
+centrality_measures = {
+    'degree': nx.degree_centrality(ufrn),
+    'closeness': nx.closeness_centrality(ufrn),
+    'betweenness': nx.betweenness_centrality(ufrn),
+    'eigenvector': nx.eigenvector_centrality(ox.convert.to_digraph(ufrn), max_iter=1000)
+}
 
-top_10_degree = set(sorted(degree_centrality, key=degree_centrality.get, reverse=True)[:10])
-top_10_closeness = set(sorted(closeness_centrality, key=closeness_centrality.get, reverse=True)[:10])
-top_10_betweenness = set(sorted(betweenness_centrality, key=betweenness_centrality.get, reverse=True)[:10])
-top_10_eigenvector = set(sorted(eigenvector_centrality, key=eigenvector_centrality.get, reverse=True)[:10])
+top_10_nodes = {key: set(sorted(measure, key=measure.get, reverse=True)[:10]) for key, measure in centrality_measures.items()}
 
-top_degree_closeness = top_10_degree & top_10_closeness
-top_degree_betweenness = top_10_degree & top_10_betweenness
-top_degree_eigenvector = top_10_degree & top_10_eigenvector
-top_closeness_betweenness = top_10_closeness & top_10_betweenness
-top_closeness_eigenvector = top_10_closeness & top_10_eigenvector
-top_betweenness_eigenvector = top_10_betweenness & top_10_eigenvector
-top_all_metrics = top_10_degree & top_10_closeness & top_10_betweenness & top_10_eigenvector
+top_combinations = {
+    'degree & closeness': top_10_nodes['degree'] & top_10_nodes['closeness'],
+    'degree & betweenness': top_10_nodes['degree'] & top_10_nodes['betweenness'],
+    'degree & eigenvector': top_10_nodes['degree'] & top_10_nodes['eigenvector'],
+    'closeness & betweenness': top_10_nodes['closeness'] & top_10_nodes['betweenness'],
+    'closeness & eigenvector': top_10_nodes['closeness'] & top_10_nodes['eigenvector'],
+    'betweenness & eigenvector': top_10_nodes['betweenness'] & top_10_nodes['eigenvector'],
+    'all metrics': top_10_nodes['degree'] & top_10_nodes['closeness'] & top_10_nodes['betweenness'] & top_10_nodes['eigenvector']
+}
 
-node_colors = []
-node_sizes = []
+for name, nodes in {**top_10_nodes, **top_combinations}.items():
+    print(f'Top 10 {name.capitalize()} Centrality: {nodes}')
+
+color_map = {
+    'all metrics': ('black', 250),
+    'degree & closeness': ('cyan', 200),
+    'degree & betweenness': ('purple', 200),
+    'degree & eigenvector': ('pink', 200),
+    'closeness & betweenness': ('orange', 200),
+    'closeness & eigenvector': ('brown', 200),
+    'betweenness & eigenvector': ('lime', 200),
+    'degree': ('blue', 100),
+    'closeness': ('red', 100),
+    'betweenness': ('green', 100),
+    'eigenvector': ('yellow', 100),
+    'default': ('grey', 10)
+}
+
+node_colors, node_sizes = [], []
 
 for node in ufrn.nodes:
-    if node in top_all_metrics:
-        node_colors.append('black')
-        node_sizes.append(250)
-    elif node in top_degree_closeness:
-        node_colors.append('cyan')
-        node_sizes.append(200)
-    elif node in top_degree_betweenness:
-        node_colors.append('purple')
-        node_sizes.append(200)
-    elif node in top_closeness_betweenness:
-        node_colors.append('orange')
-        node_sizes.append(200)
-    elif node in top_degree_eigenvector:
-        node_colors.append('pink')
-        node_sizes.append(200)
-    elif node in top_closeness_eigenvector:
-        node_colors.append('brown')
-        node_sizes.append(200)
-    elif node in top_betweenness_eigenvector:
-        node_colors.append('lime')
-        node_sizes.append(200)
-    elif node in top_10_degree:
-        node_colors.append('blue')
-        node_sizes.append(100)
-    elif node in top_10_closeness:
-        node_colors.append('red')
-        node_sizes.append(100)
-    elif node in top_10_betweenness:
-        node_colors.append('green')
-        node_sizes.append(100)
-    elif node in top_10_eigenvector:
-        node_colors.append('yellow')
-        node_sizes.append(100)
+    color, size = color_map['default']  # Valores padrão
+
+    for label, nodes in top_combinations.items():
+        if node in nodes:
+            color, size = color_map[label]
+            break
     else:
-        node_colors.append('grey')
-        node_sizes.append(10)
+        for label, nodes in top_10_nodes.items():
+            if node in nodes:
+                color, size = color_map[label]
+                break
+
+    node_colors.append(color)
+    node_sizes.append(size)
 
 fig, ax = ox.plot_graph(
     ufrn,
@@ -137,19 +134,7 @@ fig, ax = ox.plot_graph(
     close=False
 )
 
-legend_handles = [
-    mpatches.Patch(color='blue', label='Top Degree Centrality'),
-    mpatches.Patch(color='red', label='Top Closeness Centrality'),
-    mpatches.Patch(color='green', label='Top Betweenness Centrality'),
-    mpatches.Patch(color='yellow', label='Top Eigenvector Centrality'),
-    mpatches.Patch(color='cyan', label='Top Degree & Closeness'),
-    mpatches.Patch(color='purple', label='Top Degree & Betweenness'),
-    mpatches.Patch(color='orange', label='Top Closeness & Betweenness'),
-    mpatches.Patch(color='pink', label='Top Degree & Eigenvector'),
-    mpatches.Patch(color='brown', label='Top Closeness & Eigenvector'),
-    mpatches.Patch(color='lime', label='Top Betweenness & Eigenvector'),
-    mpatches.Patch(color='black', label='Top Degree, Closeness, Betweenness & Eigenvector')
-]
+legend_handles = [mpatches.Patch(color=color, label=label.replace(' & ', ' and ').title()) for label, (color, _) in color_map.items() if label != 'default']
 
 plt.legend(
     handles=legend_handles, 
@@ -159,5 +144,6 @@ plt.legend(
     markerscale=0.7
 )
 plt.show()
+
 ```
 ![Centrality Metrics](./centrality_metrics.png)
