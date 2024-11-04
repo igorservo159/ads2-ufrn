@@ -26,14 +26,32 @@ One way to answer it is to take into account the following network statistics:
 
 ### CDF and PDF Analysis of Node Degrees
 
-- This statistical approach will evaluate the distribution of connections, providing insights into connectivity patterns.
+This statistical approach will evaluate the distribution of connections, providing insights into connectivity patterns.
   
 ### Multivariate Centrality Analysis
 
-- A comprehensive, multivariable analysis will assess the interplay among different centrality metrics.
+A comprehensive, multivariable analysis will assess the interplay among different centrality metrics.
 
 ### Core/Shell
 
-- **Who constitutes the core and shell of the network?** (Identifying central versus peripheral areas within the network structure.)
+Who constitutes the core and shell of the network?
 
 ---
+
+## Implementing UFRN Mobility Graph Network
+
+To address the problem, we will create a network graph representing the UFRN area, including nearby neighborhoods such as Candelária, Lagoa Nova, Capim Macio, and Nova Descoberta. We can achieve this using the **OSMnx** library in Python.
+
+```python
+
+import osmnx as ox
+import networkx as nx
+
+ufrn_box = -5.82846, -5.84804, -35.21549, -35.19446
+
+ufrn = ox.graph_from_bbox(bbox=ufrn_box, network_type='bike')
+
+fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='black', node_size=10, edge_linewidth=0.8)
+
+```
+
