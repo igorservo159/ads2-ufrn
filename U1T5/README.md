@@ -72,6 +72,7 @@ ufrn = ox.graph_from_bbox(bbox=ufrn_box, network_type='bike')
 fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='black', node_size=10, edge_linewidth=0.8)
 
 ```
+> UFRN Bike Network Graph
 
 ![UFRN Bike Network Graph](./ufrn_network.png)
 
@@ -161,4 +162,7 @@ plt.legend(
 plt.show()
 
 ```
+
+> UFRN Bike Network Graph with Centrality Metrics
+
 ![Centrality Metrics](./centrality_metrics.png)
