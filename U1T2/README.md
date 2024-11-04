@@ -2,17 +2,26 @@
 
 ## Objective: Create and manipulate a co-authorship network using real data extracted from the Scopus platform
 
-### Student: João Igor Ramos de Lima :mortar_board:
+This project builds and analyzes a co-authorship network from Scopus data on UFRN-affiliated authors in computer science, engineering, and mathematics. Focusing on neural networks, artificial intelligence, and machine learning, the network visualizes collaborative relationships among researchers. Using NetworkX and nxviz libraries, we assess network structure and density, highlighting a subgraph of authors with 20+ connections to identify key contributors and influential research clusters at UFRN.
 
-### Algorithms and Data Structure II (DCA3702)
+> ## Federal University of Rio Grande do Norte  
+> ## Technology Center  
+> ### Department of Computer Engineering and Automation  
+> #### Course: **Algorithms and Data Structure II (DCA3702)**  
+> #### Author: **João Igor Ramos de Lima:mortar_board:**
+>
+> This repository contains solutions to the tasks and exercises assigned in the Algorithms and Data Structure II (DCA3702) course.
+>
+> ### Contact
+> [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
+>
+> Copyright (c) 2024, João Igor Ramos de Lima.  
+> All rights reserved.   
+> SPDX-License-Identifier: BSD-2-Clause
 
 ### [Video explaining the activity](https://www.loom.com/share/df95291120ad45559df213ba6507c54a?sid=85feec87-aa12-43b0-bc3e-e938c7372c01)
 
 ---
-
-## Project Description
-
-This project builds and analyzes a co-authorship network from Scopus data on UFRN-affiliated authors in computer science, engineering, and mathematics. Focusing on neural networks, artificial intelligence, and machine learning, the network visualizes collaborative relationships among researchers. Using NetworkX and nxviz libraries, we assess network structure and density, highlighting a subgraph of authors with 20+ connections to identify key contributors and influential research clusters at UFRN.
 
 ## Getting UFRN articles data :globe_with_meridians:
 
