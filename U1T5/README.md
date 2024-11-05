@@ -86,7 +86,7 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 
 ![UFRN Bike Network Graph](./ufrn_network.png)
 
-### Using centrality metrics to start answering the key question
+### Using centrality metrics analysis to start answering the key question
 
 To address the question, we analyze the **top central nodes** in the network using four centrality metrics: **Degree**, **Closeness**, **Betweenness**, and **Eigenvector**. By focusing on the top nodes for each metric, we can identify key nodes and intersections between these metrics.
 
