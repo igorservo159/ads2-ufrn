@@ -161,10 +161,9 @@ plt.legend(
 plt.show()
 
 ```
-
+<a id="centrality-metrics-map"></a>
 > UFRN Bike Network Graph with Centrality Metrics
 
-<a id="centrality-metrics-map"></a>
 ![Centrality Metrics](./centrality_metrics.png)
 
 ### Using PDF and CDF analysis of node degrees to select optimal locations
