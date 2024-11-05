@@ -164,7 +164,7 @@ plt.show()
 
 > UFRN Bike Network Graph with Centrality Metrics
 
-<a id="centrality-metrics"></a>
+<a id="centrality-metrics-map"></a>
 ![Centrality Metrics](./centrality_metrics.png)
 
 ### Using PDF and CDF analysis of node degrees to select optimal locations
@@ -226,4 +226,4 @@ plt.show()
 
 ![PDF and CDF Degree Distribution](pdf_cdf_degree.png)
 
-The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](#centrality-metrics) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them ideal for meeting user demand efficiently.
+The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](#centrality-metrics-map) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them ideal for meeting user demand efficiently.
