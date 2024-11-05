@@ -19,6 +19,7 @@ This project aims to evaluate mobility around UFRN to determine optimal location
 > All rights reserved.   
 > SPDX-License-Identifier: BSD-2-Clause
 
+### [Video explaining the activity](https://www.loom.com/share/0dfb152b7fbf4d0a9e341fa4ef55e714?sid=fcbe0f3a-cb90-42fa-bbf1-a7b85fcf6431)
 ---
 
 ## Key Question
