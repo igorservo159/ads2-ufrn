@@ -273,3 +273,31 @@ plt.show()
 ![Multivariate Analysis of Centrality Metrics](./multivariate_metrics.png)
 
 Using these relationships, stations can be placed at locations that balance multiple criteria, such as high intermediation (betweenness), central accessibility (closeness), and strong connectivity (degree and eigenvector). This ensures that stations are both accessible and well-positioned to serve as key transfer points within the network.
+
+### Finding k-core/k-shell
+
+```python
+
+simple_graph = nx.Graph(ufrn)
+simple_graph.remove_edges_from(nx.selfloop_edges(ufrn))
+
+set([v for k,v in nx.core_number(simple_graph).items()])
+
+```
+> Here, we obtain that the innermost k-core has k equal to 2.
+
+```python
+
+core = list(nx.k_core(simple_graph, 2)) 
+print(core)
+print(len(core))
+
+node_colors = ['green' if node in core else 'grey' for node in ufrn.nodes()]
+
+fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color=node_colors, edge_color='black', node_size=10, edge_linewidth=0.8)
+
+```
+
+![k-core graph](./kcore.png)
+
+> k-core is highlighted in green and counts with 1124 nodes
