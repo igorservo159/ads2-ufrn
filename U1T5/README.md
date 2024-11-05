@@ -28,10 +28,13 @@ One way to answer it is to take into account the following network statistics:
 
 ### Centrality Metrics
 
-- **Degree Centrality:** Number of connections of each neighborhood node.
-- **Closeness Centrality:** Calculates the average distance from each node to all other nodes, assessing overall accessibility.
-- **Betweenness Centrality:** Analyzes each neighborhood's position on the shortest paths, determining areas of intermediation.
-- **Eigenvector Centrality:** Assesses each node's influence based on the importance of its neighbors.
+- **Degree Centrality:** Measures the number of direct connections each node (location) has. In this context, a high degree centrality indicates areas with many direct connections to other parts of the network, potentially suggesting locations with high local accessibility and visibility. These areas might be beneficial for dock stations as they allow easy access from surrounding points.
+
+- **Closeness Centrality:** Calculates the average shortest distance from each node to all other nodes, assessing overall accessibility within the network. Nodes with high closeness centrality are generally closer, on average, to all other points, which could indicate central, well-connected areas that are easy to reach. This is valuable for dock-station placement because it ensures that users can access the station quickly from various parts of the campus.
+
+- **Betweenness Centrality:** Measures the extent to which a node lies on the shortest paths between other nodes, identifying key intermediaries within the network. High betweenness centrality suggests locations that serve as bridges or transfer points between different areas. Placing dock stations in these spots could be advantageous because they are likely to be on popular routes, facilitating movement across the campus and increasing station visibility.
+
+- **Eigenvector Centrality:** Assesses the influence of a node based not only on its direct connections but also on the importance of those connections. In this context, a high eigenvector centrality implies that a location is connected to other well-connected or central areas. Dock stations at such locations could benefit from high traffic due to the "influence" of nearby important points, ensuring that these stations remain busy and accessible.
 
 ### CDF and PDF Analysis of Node Degrees
 
@@ -54,11 +57,19 @@ To address the problem, we can start creating a network graph representing the U
 
 ```python
 
+# Standard library imports
 import osmnx as ox
 import networkx as nx
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Data visualization and analysis imports
+import seaborn as sns
 import matplotlib.patches as mpatches
-from scipy.stats import gaussian_kde
+
+# Statistical and distribution imports
+from scipy.stats import gaussian_kde, norm
 
 ```
 
@@ -226,3 +237,39 @@ plt.show()
 ![PDF and CDF Degree Distribution](pdf_cdf_degree.png)
 
 The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](#centrality-metrics-map) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them good candidates for meeting user demand efficiently.
+
+### Using Multivariate Analysis of Centrality Metrics to Select Optimal Locations
+
+To determine the best locations for bike stations, we can analyze **centrality metrics** through a **multivariate approach**. This analysis highlights strategic points within the network, taking into account multiple aspects of connectivity and accessibility, thus helping to prioritize station placement for optimal coverage and ease of access.
+
+The steps involve the following:
+
+1. **Analyze the Distribution of Each Centrality Metric:** The **diagonal histograms in the pairplot** show the distribution of each metric (such as degree, closeness, betweenness, and eigenvector centralities). This helps identify areas with different characteristics, such as high connectivity or central accessibility, which can serve as potential locations for bike stations based on specific needs.
+
+2. **Identify Relationships Between Pairs of Metrics:** The **contour plots in the pairplot** show correlations or patterns between centrality metrics. For example, nodes with high degree and eigenvector centralities are both central and well-connected, making them ideal candidates for bike stations that require strong accessibility and high traffic potential.
+
+```python
+
+betweenness = nx.betweenness_centrality(ufrn)
+degree = nx.degree_centrality(ufrn)
+eigenvector = nx.eigenvector_centrality(ox.convert.to_digraph(ufrn), max_iter=1000)
+closeness = nx.closeness_centrality(ufrn)
+
+data = pd.DataFrame({
+    "Betweenness": list(betweenness.values()),
+    "Degree": list(degree.values()),
+    "Eigenvector": list(eigenvector.values()),
+    "Closeness": list(closeness.values())
+})
+
+sns.pairplot(data, kind="kde", diag_kind="kde", plot_kws={'fill': True, 'alpha': 0.5, 'color': 'red'})
+plt.suptitle("Multivariate Analysis of Centrality Metrics", y=1.02)
+plt.show()
+
+```
+
+> Multivariate Analysis of Centrality Metrics
+
+![Multivariate Analysis of Centrality Metrics](multivariate_metrics.png)
+
+Using these relationships, stations can be placed at locations that balance multiple criteria, such as high intermediation (betweenness), central accessibility (closeness), and strong connectivity (degree and eigenvector). This ensures that stations are both accessible and well-positioned to serve as key transfer points within the network.
