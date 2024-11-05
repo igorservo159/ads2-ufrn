@@ -270,6 +270,6 @@ plt.show()
 
 > Multivariate Analysis of Centrality Metrics
 
-![Multivariate Analysis of Centrality Metrics](multivariate_metrics.png)
+![Multivariate Analysis of Centrality Metrics](./multivariate_metrics.png)
 
 Using these relationships, stations can be placed at locations that balance multiple criteria, such as high intermediation (betweenness), central accessibility (closeness), and strong connectivity (degree and eigenvector). This ensures that stations are both accessible and well-positioned to serve as key transfer points within the network.
