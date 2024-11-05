@@ -86,7 +86,7 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 
 ![UFRN Bike Network Graph](./ufrn_network.png)
 
-### Answering the Key Question with Centrality Metrics
+### Using centrality metrics to start answering the key question
 
 To address the question, we analyze the **top central nodes** in the network using four centrality metrics: **Degree**, **Closeness**, **Betweenness**, and **Eigenvector**. By focusing on the top nodes for each metric, we can identify key nodes and intersections between these metrics.
 
@@ -177,7 +177,7 @@ plt.show()
 
 ![Centrality Metrics](./centrality_metrics.png)
 
-### Using PDF and CDF analysis of node degrees to select optimal locations
+### Using PDF and CDF analysis of node degrees
 
 To determine the best locations for bike stations, we can analyze **node degrees** using two statistical tools: **PDF (Probability Density Function)** and **CDF (Cumulative Distribution Function)**. This approach helps identify highly connected nodes (hubs) and prioritize station placement for optimal coverage and accessibility.
 
@@ -238,7 +238,7 @@ plt.show()
 
 The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](#centrality-metrics-map) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them good candidates for meeting user demand efficiently.
 
-### Using Multivariate Analysis of Centrality Metrics to Select Optimal Locations
+### Using multivariate analysis of centrality metrics
 
 To determine the best locations for bike stations, we can analyze **centrality metrics** through a **multivariate approach**. This analysis highlights strategic points within the network, taking into account multiple aspects of connectivity and accessibility, thus helping to prioritize station placement for optimal coverage and ease of access.
 
