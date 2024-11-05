@@ -19,6 +19,8 @@ This notebook generates a drive network for the city of Natal, RN, using OSMnx a
 > All rights reserved.   
 > SPDX-License-Identifier: BSD-2-Clause
 
+### [Video explaining the activity](https://www.loom.com/share/82fab5878364405583fc0281e0c65af0?sid=717915bc-378e-4fab-a4c5-f660626e6257)
+
 ---
 
 ## Metrics Analyzed
