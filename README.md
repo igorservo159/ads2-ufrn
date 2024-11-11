@@ -1,4 +1,4 @@
-# AEDII_UFRN
+# Algorithms and Data Structures II 
 
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
