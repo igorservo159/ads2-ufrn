@@ -1,6 +1,6 @@
-# Network Elements
+# AEDII_UFRN
 
-## Objective: Read the first four chapters of the course textbook, [The Atlas For The Aspiring Network Scientist](https://www.networkatlas.eu/). Then, answer the exercises of chapters 2, 3 and 4.
+## Second Unit Projects
 
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
@@ -16,5 +16,3 @@
 > Copyright (c) 2024, João Igor Ramos de Lima.  
 > All rights reserved.   
 > SPDX-License-Identifier: BSD-2-Clause
-
-#### Answers available on [Jupyter Notebook](./answers.ipynb)
