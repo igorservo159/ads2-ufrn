@@ -84,4 +84,5 @@ print(f"k-core info for k = {n_cores[-1]}: {k_core}")
 
 ```python
 nx.write_gexf(graph, 'network_centrality_core.gexf')
+nx.write_graphml(graph, "network_centrality_core.graphml")
 ```
