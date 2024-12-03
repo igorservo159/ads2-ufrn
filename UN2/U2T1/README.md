@@ -19,7 +19,7 @@ This project builds and analyzes a co-authorship network using data from Graduat
 > All rights reserved.   
 > SPDX-License-Identifier: BSD-2-Clause
 
-### [Video explaining the activity](https://www.loom.com/looms/videos)
+### [Video explaining the activity](https://www.loom.com/share/6aa33f813aef497794fa3599225920d3?sid=bc9630dc-2702-470d-bb9b-39245b0c58c9)
 
 ---
 
