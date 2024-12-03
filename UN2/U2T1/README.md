@@ -92,38 +92,52 @@ nx.write_gexf(graph, 'network_centrality_core.gexf')
 nx.write_graphml(graph, "network_centrality_core.graphml")
 ```
 
-## Centrality Metrics Based Visualization
+## Centrality Metrics Based Visualization 
 
-In this co-authorship network, centrality metrics are used to analyze and visualize the roles and relationships of authors within the collaboration structure. Each metric provides unique insights into the network's dynamics and the authors' influence, connectivity, or importance.
+In this co-authorship network, centrality metrics are used to analyze and visualize the roles and relationships of authors within the collaboration structure. Each metric provides unique insights into the network's dynamics and the authors' influence, connectivity, or importance. The visualization employs the **ForceAtlas 2** layout, a force-directed algorithm that positions nodes based on their connections, creating an intuitive spatial representation of the network. Highly connected nodes tend to cluster together, while less connected nodes are more dispersed, providing a clear view of the network's structure and the relationships between authors.
 
 ### Degree Centrality
 
 Degree centrality highlights the direct connections of each author. Nodes with higher degree centrality are displayed in blue, and their size is proportional to their degree, emphasizing the authors with the most collaborations. The 10 nodes with the highest degree centrality are marked in red, showcasing key contributors who act as major hubs of collaboration. This visualization helps identify prolific authors who connect with many peers, indicating their potential role in facilitating widespread information sharing and cooperation.
 
-![Degree Centrality Network](./imgs/degree.png)
+![Degree Centrality Visualization](./imgs/degree.png)
 
-> Degree Centrality Network
+> Degree Centrality Visualization
 
 ### Closeness Centrality
 
 Closeness centrality measures how quickly an author can access other authors in the network. Nodes with higher closeness centrality are displayed in green, with node size proportional to their degree. The 10 nodes with the highest closeness centrality, marked in red, represent authors with the shortest average distance to all others, making them efficient for spreading ideas and facilitating collaborations. This metric underscores the accessibility and central positioning of these authors in the co-authorship structure.
 
-![Closeness Centrality Network](./imgs/closeness.png)
+![Closeness Centrality Visualization](./imgs/closeness.png)
 
-> Closeness Centrality Network
+> Closeness Centrality Visualization
 
 ### Betweenness Centrality
 
 Betweenness centrality reveals authors who serve as critical bridges within the network. Nodes with higher betweenness centrality are displayed in blue, with size reflecting their degree. The 10 nodes with the highest betweenness centrality are marked in red, highlighting their role as connectors between different clusters or groups. These authors are pivotal for maintaining communication flow and integrating otherwise disconnected parts of the network, making them essential for sustaining collaborative efforts.
 
-![Betweenness Centrality Network](./imgs/betweenness.png)
+![Betweenness Centrality Visualization](./imgs/betweenness.png)
 
-> Betweenness Centrality Network
+> Betweenness Centrality Visualization
 
 ### Eigenvector Centrality
 
 Eigenvector centrality measures an author's influence based on their connections to other influential authors. Nodes with higher eigenvector centrality are displayed in yellow, with size proportional to their degree. The 10 nodes with the highest eigenvector centrality are marked in red, identifying key figures whose connections amplify their prominence. These authors often occupy critical roles in the network's hierarchy, contributing to the network's intellectual cohesion and shaping the direction of collaborative work.
 
-![Eigenvector Centrality Network](./imgs/eigenvector.png)
+![Eigenvector Centrality Visualization](./imgs/eigenvector.png)
 
-> Eigenvector Centrality Network
+> Eigenvector Centrality Visualization
+
+## K-core and K-shell Visualization
+
+This visualization uses the **Yifan Hu** layout, an algorithm designed for efficient and aesthetically pleasing representation of large graphs. It highlights the **k-core** and **k-shell** structure of the co-authorship network, where nodes are categorized based on their connectivity and hierarchical importance. 
+
+The **k-core** is represented by red nodes and includes authors who are part of densely connected subgraphs. These nodes signify the network's robust core, where collaborations are most frequent and interconnected, indicating highly active and influential authors within the research community.
+
+The **k-shell** is represented by blue nodes, encompassing authors who are less central but still part of cohesive subgroups. These nodes often act as intermediaries between the core and the network's periphery, contributing to the diffusion of ideas and collaborations.
+
+Nodes outside these categories are shown in gray, representing authors with fewer connections who are on the fringes of the co-authorship network. By examining the k-core and k-shell, we can identify the network's structural backbone and understand the varying levels of influence and collaboration among its authors.
+
+![K-core and K-shell Visualization](./imgs/core_shell.png)
+
+> K-core and K-shell Visualization
