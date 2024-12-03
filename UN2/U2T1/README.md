@@ -41,6 +41,11 @@ This project builds and analyzes a co-authorship network using data from Graduat
 import networkx as nx
 
 graph = nx.read_gexf('network.gexf')
+
+for node, data in graph.nodes(data=True):
+  data["id"] = data["complete_name"]
+  data["label"] = data["complete_name"]
+  data.pop("complete_name")
 ```
 
 ### Centrality Measurements
