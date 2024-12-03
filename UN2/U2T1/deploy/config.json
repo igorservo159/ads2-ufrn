@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "https://raw.githubusercontent.com/igorservo159/ads2-ufrn/refs/heads/main/UN2/U2T1/imgs/ppgeec_fake_logo.jpeg",
+    "link": "",
+    "text": "João Igor"
+  },
+  "text": {
+    "more": "This interactive web page showcases a co-authorship network from the Graduate Program in Electrical and Computer Engineering (PPgEEC) at UFRN, created using Gephi and exported with Sigma.js Explorer for intuitive navigation. Communities are identified using the Modularity Class algorithm, revealing distinct research clusters, while node sizes are scaled by degree to highlight the most connected authors. The visualization offers a dynamic way to explore collaboration patterns, uncover key contributors, and understand the structure of academic partnerships within PPgEEC.",
+    "intro": "A co-authorship network using data from UFRN Graduate Program in Eletrical and Computer Engineering (PPgEEC).",
+    "title": "PPgEEC Coauthorship Network"
+  },
+  "legend": {
+    "edgeLabel": "Connection",
+    "colorLabel": "Group Community",
+    "nodeLabel": "Author"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Modularity Class",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "Degree"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
