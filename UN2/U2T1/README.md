@@ -25,7 +25,7 @@ This project builds and analyzes a co-authorship network using data from Graduat
 
 ## Centrality Metrics
 
-- **Degree Centrality:** Measures the number of direct connections each node (location) has. 
+- **Degree Centrality:** Measures the number of direct connections each node has. 
 
 - **Closeness Centrality:** Calculates the average shortest distance from each node to all other nodes, assessing overall accessibility within the network. 
 
@@ -91,3 +91,39 @@ print(f"k-core info for k = {n_cores[-1]}: {k_core}")
 nx.write_gexf(graph, 'network_centrality_core.gexf')
 nx.write_graphml(graph, "network_centrality_core.graphml")
 ```
+
+## Centrality Metrics Based Visualization
+
+In this co-authorship network, centrality metrics are used to analyze and visualize the roles and relationships of authors within the collaboration structure. Each metric provides unique insights into the network's dynamics and the authors' influence, connectivity, or importance.
+
+### Degree Centrality
+
+Degree centrality highlights the direct connections of each author. Nodes with higher degree centrality are displayed in blue, and their size is proportional to their degree, emphasizing the authors with the most collaborations. The 10 nodes with the highest degree centrality are marked in red, showcasing key contributors who act as major hubs of collaboration. This visualization helps identify prolific authors who connect with many peers, indicating their potential role in facilitating widespread information sharing and cooperation.
+
+![Degree Centrality Network](./imgs/degree.png)
+
+> Degree Centrality Network
+
+### Closeness Centrality
+
+Closeness centrality measures how quickly an author can access other authors in the network. Nodes with higher closeness centrality are displayed in green, with node size proportional to their degree. The 10 nodes with the highest closeness centrality, marked in red, represent authors with the shortest average distance to all others, making them efficient for spreading ideas and facilitating collaborations. This metric underscores the accessibility and central positioning of these authors in the co-authorship structure.
+
+![Closeness Centrality Network](./imgs/closeness.png)
+
+> Closeness Centrality Network
+
+### Betweenness Centrality
+
+Betweenness centrality reveals authors who serve as critical bridges within the network. Nodes with higher betweenness centrality are displayed in blue, with size reflecting their degree. The 10 nodes with the highest betweenness centrality are marked in red, highlighting their role as connectors between different clusters or groups. These authors are pivotal for maintaining communication flow and integrating otherwise disconnected parts of the network, making them essential for sustaining collaborative efforts.
+
+![Betweenness Centrality Network](./imgs/betweenness.png)
+
+> Betweenness Centrality Network
+
+### Eigenvector Centrality
+
+Eigenvector centrality measures an author's influence based on their connections to other influential authors. Nodes with higher eigenvector centrality are displayed in yellow, with size proportional to their degree. The 10 nodes with the highest eigenvector centrality are marked in red, identifying key figures whose connections amplify their prominence. These authors often occupy critical roles in the network's hierarchy, contributing to the network's intellectual cohesion and shaping the direction of collaborative work.
+
+![Eigenvector Centrality Network](./imgs/eigenvector.png)
+
+> Eigenvector Centrality Network
