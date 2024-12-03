@@ -151,3 +151,7 @@ Communities were identified using the modularity optimization algorithm proposed
 The visualization provides insights into the network's structure, helping to uncover key contributors, explore the interplay between communities, and understand the dynamics of collaborative research. 
 
 [![PPgEEC Co-authorship Network](./imgs/ppgeec_fake_logo.jpeg)](https://igorservo159.github.io/PPgEEC_Co-authorship_Network/)
+
+PPgEEC Co-authorship Network[![](./imgs/ppgeec_fake_logo.jpeg)](https://igorservo159.github.io/PPgEEC_Co-authorship_Network/)
+
+PPgEEC Co-authorship Network[<img src="./imgs/ppgeec_fake_logo.jpeg" width="20" height="20" />](https://igorservo159.github.io/PPgEEC_Co-authorship_Network/)
