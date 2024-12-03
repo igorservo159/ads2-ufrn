@@ -141,3 +141,13 @@ Nodes outside these categories are shown in gray, representing authors with fewe
 ![K-core and K-shell Visualization](./imgs/core_shell.png)
 
 > K-core and K-shell Visualization
+
+## Communities Visualization
+
+This interactive visualization showcases the division of the co-authorship network from the Graduate Program in Electrical and Computer Engineering (PPgEEC) at UFRN into distinct research communities. Using the **ForceAtlas 2** layout, nodes are positioned to reflect their relationships, with node sizes still scaled by degree to emphasize the most connected authors. 
+
+Communities were identified using the modularity optimization algorithm proposed by Vincent D. Blondel and colleagues, as described in their paper *Fast unfolding of communities in large networks*. This algorithm groups nodes into communities by maximizing the modularity metric, highlighting clusters of authors who collaborate more frequently with each other than with the rest of the network. Each community represents a distinct research group or collaboration cluster, reflecting the diversity of academic partnerships within PPgEEC.
+
+The visualization provides insights into the network's structure, helping to uncover key contributors, explore the interplay between communities, and understand the dynamics of collaborative research. 
+
+[![PPgEEC Co-authorship Network](./imgs/ppgeec_fake_logo.jpeg)](https://igorservo159.github.io/PPgEEC_Co-authorship_Network/)
