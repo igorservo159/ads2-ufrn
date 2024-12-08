@@ -15,9 +15,9 @@ This notebook generates a drive network for the city of Natal, RN, using OSMnx a
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> Copyright (c) 2024, João Igor Ramos de Lima.  
-> All rights reserved.   
-> SPDX-License-Identifier: BSD-2-Clause
+> This project is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for more details.
+> © 2024 João Igor Ramos de Lima.
+> SPDX-License-Identifier: MIT
 
 ### [Video explaining the activity](https://www.loom.com/share/82fab5878364405583fc0281e0c65af0?sid=717915bc-378e-4fab-a4c5-f660626e6257)
 
@@ -73,7 +73,7 @@ ox.plot_graph(G)
 
 > Natal network graph
 
-![Natal Network](./natal_network.png)
+![Natal Network](./imgs/natal_network.png)
 
 ## Network Analysis
 
@@ -169,11 +169,11 @@ print("Pitimbu: ", nx.average_clustering(ox.convert.to_digraph(Pitimbu)))
 ```
 > Candelária network graph
 
-![Candelária Network](./candelaria_network.png)
+![Candelária Network](./imgs/candelaria_network.png)
 
 > Pitimbu network graph
 
-![Pitimbu Network](./pitimbu_network.png)
+![Pitimbu Network](./imgs/pitimbu_network.png)
 
 
 #### Findings

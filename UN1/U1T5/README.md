@@ -15,9 +15,9 @@ This project aims to evaluate mobility around UFRN to determine optimal location
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> Copyright (c) 2024, João Igor Ramos de Lima.  
-> All rights reserved.   
-> SPDX-License-Identifier: BSD-2-Clause
+> This project is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for more details.
+> © 2024 João Igor Ramos de Lima.
+> SPDX-License-Identifier: MIT
 
 ### [Video explaining the activity](https://www.loom.com/share/0dfb152b7fbf4d0a9e341fa4ef55e714?sid=fcbe0f3a-cb90-42fa-bbf1-a7b85fcf6431)
 ---
@@ -85,7 +85,7 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color='red', edge_color='bla
 ```
 > UFRN Bike Network Graph
 
-![UFRN Bike Network Graph](./ufrn_network.png)
+![UFRN Bike Network Graph](./imgs/ufrn_network.png)
 
 ### Using centrality metrics analysis to start answering the key question
 
@@ -176,7 +176,7 @@ plt.show()
 <a id="centrality-metrics-map"></a>
 > UFRN Bike Network Graph with Centrality Metrics
 
-![Centrality Metrics](./centrality_metrics.png)
+![Centrality Metrics](./imgs/centrality_metrics.png)
 
 ### Using PDF and CDF analysis of node degrees
 
@@ -235,7 +235,7 @@ plt.show()
 
 > PDF and CDF Degree Distribution
 
-![PDF and CDF Degree Distribution](pdf_cdf_degree.png)
+![PDF and CDF Degree Distribution](./imgs/pdf_cdf_degree.png)
 
 The information obtained above from the PDF and CDF graphs helps us understand that the nodes highlighted in blue (degree centrality) in the [image](#centrality-metrics-map) represent the top 10% most connected nodes in the university network map. These nodes serve as excellent candidates for potential locations for bike docking stations, as their high connectivity indicates areas with significant accessibility and movement, making them good candidates for meeting user demand efficiently.
 
@@ -271,7 +271,7 @@ plt.show()
 
 > Multivariate Analysis of Centrality Metrics
 
-![Multivariate Analysis of Centrality Metrics](./multivariate_metrics.png)
+![Multivariate Analysis of Centrality Metrics](./imgs/multivariate_metrics.png)
 
 Using these relationships, stations can be placed at locations that balance multiple criteria, such as high intermediation (betweenness), central accessibility (closeness), and strong connectivity (degree and eigenvector). This ensures that stations are both accessible and well-positioned to serve as key transfer points within the network.
 
@@ -299,6 +299,6 @@ fig, ax = ox.plot_graph(ufrn, bgcolor='white', node_color=node_colors, edge_colo
 
 ```
 
-![k-core graph](./kcore.png)
+![k-core graph](./imgs/kcore.png)
 
 > k-core is highlighted in green and counts with 1124 nodes

@@ -13,6 +13,6 @@
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> Copyright (c) 2024, João Igor Ramos de Lima.  
-> All rights reserved.   
-> SPDX-License-Identifier: BSD-2-Clause
+> This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for more details.
+> © 2024 João Igor Ramos de Lima.
+> SPDX-License-Identifier: MIT
