@@ -15,9 +15,8 @@ This project builds and analyzes a co-authorship network from Scopus data on UFR
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> This project is licensed under the MIT License.
-> See the [LICENSE](../../LICENSE) file for more details.
-> © 2024 João Igor Ramos de Lima.
+> This project is licensed under the [MIT License](../../LICENSE)  
+> © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
 ### [Video explaining the activity](https://www.loom.com/share/df95291120ad45559df213ba6507c54a?sid=85feec87-aa12-43b0-bc3e-e938c7372c01)

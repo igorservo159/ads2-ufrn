@@ -15,9 +15,8 @@ This project aims to evaluate mobility around UFRN to determine optimal location
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> This project is licensed under the MIT License.
-> See the [LICENSE](../../LICENSE) file for more details.
-> © 2024 João Igor Ramos de Lima.
+> This project is licensed under the [MIT License](../../LICENSE)  
+> © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
 ### [Video explaining the activity](https://www.loom.com/share/0dfb152b7fbf4d0a9e341fa4ef55e714?sid=fcbe0f3a-cb90-42fa-bbf1-a7b85fcf6431)

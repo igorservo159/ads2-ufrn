@@ -15,9 +15,8 @@ This project builds and analyzes a co-authorship network using data from Graduat
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> This project is licensed under the MIT License.
-> See the [LICENSE](../../LICENSE) file for more details.
-> © 2024 João Igor Ramos de Lima.
+> This project is licensed under the [MIT License](../../LICENSE)  
+> © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
 ### [Video explaining the activity](https://www.loom.com/share/6aa33f813aef497794fa3599225920d3?sid=bc9630dc-2702-470d-bb9b-39245b0c58c9)
