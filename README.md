@@ -11,6 +11,7 @@
 > ### Contact
 > [igorservo159@gmail.com](mailto:igorservo159@gmail.com)
 >
-> This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+> This project is licensed under the MIT License.
+> See the [LICENSE](./LICENSE) file for more details.
 > © 2024 João Igor Ramos de Lima.
 > SPDX-License-Identifier: MIT
