@@ -23,237 +23,27 @@ The analysis involves instrumenting the code with the time module, ensuring repr
 
 ---
 
-## Import Dependencies
-
-```python
-!pip install pytest pytest-sugar
-```
-
-```python
-import plotly.graph_objs as go
-import numpy as np
-import matplotlib.pyplot as plt
-from time import time
-from scipy.stats import t
-```
-
 ## Binary Search Tree (BST) Classes
 
-Down below there are some useful classes for creating and managing a Binary Search Tree (BST). The code defines two main classes: `Node`, which represents the individual nodes of the tree, and `BST`, which handles the overall tree structure. It includes methods for adding elements, checking if a value exists, and visualizing the tree using Plotly. This implementation is designed for efficiency and supports recursive operations for tree traversal and management. 
+In [Jupyter Notebook](./BST_problems_performance.ipynb) there is a code with some useful classes for creating and managing a Binary Search Tree (BST). The code defines two main classes: `Node`, which represents the individual nodes of the tree, and `BST`, which handles the overall tree structure. It includes methods for adding elements, checking if a value exists, and visualizing the tree using Plotly. This implementation is designed for efficiency and supports recursive operations for tree traversal and management. 
 
-*The **`%%file`** magic command in Jupyter is used to save the implementation in a separate Python file.*
-
-```python
-%%file binarysearchtree.py
-
-class Node:
-  """
-  A class representing a node in a binary search tree.
-
-  Attributes:
-  - value: the value of the node
-  - left_child: the left child of the node
-  - right_child: the right child of the node
-  """
-
-  def __init__(self, value):
-      """
-      Initializes a new instance of the Node class.
-
-      Args:
-      - value: the value of the node
-      """
-      self.value = value
-      self.left_child = None
-      self.right_child = None
-
-
-class BST:
-  """
-  A class representing a binary search tree.
-
-  Attributes:
-  - root: the root node of the tree
-  """
-
-  def __init__(self):
-      """
-      Initializes a new instance of the BST class.
-      """
-      self.root = None
-
-  def add(self, value):
-      """
-      Adds a new node with the given value to the tree.
-
-      Args:
-      - value: the value of the node to add
-      """
-      if self.root is None:
-          # The root does exist yet, create it
-          self.root = Node(value)
-      else:
-          # Find the right place and insert new value
-          self._add_recursive(self.root, value)
-
-  def _add_recursive(self, current_node, value):
-      """
-      A helper method to recursively traverse the tree and find the correct position to add the new node.
-
-      Args:
-      - current_node: the current node to traverse
-      - value: the value of the node to add
-      """
-      if value <= current_node.value:
-          # Go to the left
-          if current_node.left_child is None:
-              current_node.left_child = Node(value)
-          else:
-              self._add_recursive(current_node.left_child, value)
-      else:
-          # Go to the right
-          if current_node.right_child is None:
-              current_node.right_child = Node(value)
-          else:
-              self._add_recursive(current_node.right_child, value)
-
-  def _contains(self, current_node, value):
-      """
-      A helper method to recursively traverse the tree and find the node with the given value.
-
-      Args:
-      - current_node: the current node to traverse
-      - value: the value to search for
-
-      Returns:
-      - True if a node with the given value is found, False otherwise
-      """
-      if current_node is None:
-          return False
-      if current_node.value == value:
-          return True
-      if value < current_node.value:
-          return self._contains(current_node.left_child, value)
-      return self._contains(current_node.right_child, value)
-
-  def contains(self, value):
-      """
-      Checks whether a node with the given value is present in the tree.
-
-      Args:
-      - value: the value to search for
-
-      Returns:
-      - True if a node with the given value is found, False otherwise
-      """
-      return self._contains(self.root, value)
-
-  def plot(self):
-      """
-      Plots the binary search tree using Plotly.
-      """
-      if self.root is None:
-          print("The tree is empty!")
-          return
-
-      # Initialize lists for coordinates and connections
-      node_coords = []
-      lines = []
-
-      # Helper function to traverse the tree and fill the coordinate and connection lists
-      def _plot_recursive(node, x, y, offset):
-          if node is not None:
-              node_coords.append((x, y, node.value))
-              if node.left_child is not None:
-                  new_x = x - offset
-                  new_y = y - 1
-                  lines.append((x, y, new_x, new_y))
-                  _plot_recursive(node.left_child, new_x, new_y, offset / 2)
-              if node.right_child is not None:
-                  new_x = x + offset
-                  new_y = y - 1
-                  lines.append((x, y, new_x, new_y))
-                  _plot_recursive(node.right_child, new_x, new_y, offset / 2)
-
-      # Traverse the tree starting from the root node
-      _plot_recursive(self.root, x=0, y=0, offset=0.5)
-
-      # Create a scatter plot for the nodes
-      node_trace = go.Scatter(x=[x for x, y, _ in node_coords],
-                              y=[y for _, y, _ in node_coords],
-                              text=[str(val) for _, _, val in node_coords],
-                              mode='markers+text',
-                              textposition='top center',
-                              marker=dict(symbol='circle',
-                                          size=20,
-                                          color='darkblue'))
-
-      # Create a scatter plot for the connections between nodes
-      line_trace = go.Scatter(x=sum([[x1, x2, None] for x1, y1, x2, y2 in lines], []),
-                              y=sum([[y1, y2, None] for x1, y1, x2, y2 in lines], []),
-                              mode='lines',
-                              line=dict(color='black'))
-
-      # Combine the two scatter plots
-      layout = go.Layout(title='',
-                          xaxis=dict(title='', showgrid=False, zeroline=False, showticklabels=False),
-                          yaxis=dict(title='', showgrid=False, zeroline=False, showticklabels=False),
-                          showlegend=False)
-
-      fig = go.Figure(data=[node_trace, line_trace], layout=layout)
-      fig.show()
-```
-
+*The **`%%file`** magic command in Jupyter is used to save the implementation in a separate Python file.* In this case the code is saved at `binarysearchtree.py`.
 
 ## Closest Value
 
-The next code provides a function to find the value in a Binary Search Tree (BST) that is closest to a given **target** value. The implementation consists of a helper function, findClosestValueInBstHelper, which recursively explores the tree nodes and updates the closest value based on the absolute difference between the target and the current node's value. 
+The next code at the notebook provides a function to find the value in a Binary Search Tree (BST) that is closest to a given **target** value. The implementation consists of a helper function, findClosestValueInBstHelper, which recursively explores the tree nodes and updates the closest value based on the absolute difference between the target and the current node's value. 
 
 The main function, findClosestValue, acts as an entry point, starting the search from the root of the tree. The use of recursion ensures an efficient traversal of the BST. 
 
-```python
-%%file closestvalue.py
-# Example usage:
-
-def findClosestValue(tree, target):
-    return findClosestValueInBstHelper(tree.root, target, tree.root.value)
-
-def findClosestValueInBstHelper(node, target, closest):
-    if node is None:
-        return closest
-    if abs(target - closest) > abs(target - node.value):
-        closest = node.value
-    if target < node.value:
-        return findClosestValueInBstHelper(node.left_child, target, closest)
-    elif target > node.value:
-        return findClosestValueInBstHelper(node.right_child, target, closest)
-    else:
-        return closest
-```
+This code section is saved at `closestvalue.py`.
 
 ## Largest Value
 
-The following code defines a function to find the **k** *kth largest* value in a Binary Search Tree (BST). The implementation relies on an auxiliary function, `inOrderTraverse`, which performs an in-order traversal of the tree to generate a sorted list of node values. 
+The next part defines a function to find the **k** *kth largest* value in a Binary Search Tree (BST). The implementation relies on an auxiliary function, `inOrderTraverse`, which performs an in-order traversal of the tree to generate a sorted list of node values. 
 
 The main function, `findKthLargestValue`, computes the result by accessing the appropriate index from this sorted list. The approach ensures that the values are processed in ascending order, making it easy to identify the desired kth largest element. 
 
-```python
-%%file largestvalue.py
-
-def findKthLargestValue(tree, k):
-    sortedNodeValues = []
-    inOrderTraverse(tree.root,sortedNodeValues)
-    return sortedNodeValues[len(sortedNodeValues) - k]
-
-def inOrderTraverse(node, sortedNodeValues):
-    if node is None:
-        return
-
-    inOrderTraverse(node.left_child, sortedNodeValues)
-    sortedNodeValues.append(node.value)
-    inOrderTraverse(node.right_child, sortedNodeValues)
-```
-
+This code section is saved at `largestvalue.py`.
 
 ## Algorithm Performance Testing
 
@@ -331,24 +121,11 @@ The results are plotted using error bars to visualize the average execution time
 
 By combining repeated runs, confidence intervals, and varying input sizes, this approach provides a robust evaluation of algorithm efficiency and scalability.
 
-```python
-# Make graphic
-plt.figure(figsize=(12, 6))
-plt.errorbar(vector_sizes, results_closest, yerr=confidence_intervals_closest, label='Solver Closest', fmt='-o')
-plt.errorbar(vector_sizes, results_kth_largest, yerr=confidence_intervals_kth_largest, label='Solver Kth Largest', fmt='-o')
-plt.xlabel('Vector size')
-plt.ylabel('Avarage time (s)')
-plt.title('Algorithms performance')
-plt.legend()
-plt.grid(True)
-plt.show()
-```
-
 ![Performance Graphic](./imgs/graphic.png)
 
 > Performance Graphic
 
-#### Graphic Observations
+#### Observations
 
 *  **Solver Closest**  
    The execution time of `Solver Closest` remains constant as the input size increases. This behavior suggests that the algorithm operates in **O(1)** time complexity .
