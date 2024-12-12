@@ -64,7 +64,7 @@ from closestvalue import findClosestValue
 np.random.seed(42)
 N = 100000
 steps = 10
-executions_per_size = 100
+executions_per_size = 10
 
 vector_sizes = np.linspace(100, N, steps, dtype=int)
 
@@ -80,8 +80,8 @@ for size in vector_sizes:
     times_kth_largest = []
 
     # Create test datatest
-    target = np.random.randint(250, 500)
-    data = np.random.randint(0, 1000, size)
+    target = size/2
+    data = np.random.randint(0, size, size)
 
     bst = BST()
     for value in data:
