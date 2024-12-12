@@ -1,6 +1,6 @@
-# BTS Problem Performance Assessment :busts_in_silhouette:
+# BST Problem Performance Assessment :busts_in_silhouette:
 
-## Objective: Evaluate the performance of two algorithms closestvalue.py and largestvalue.py considering several random and reproducible inputs, varying the size of the input vector up to a large value N.
+## Objective: Evaluate the performance of two algorithms of binary search tree closestvalue.py and largestvalue.py considering several random and reproducible inputs, varying the size of the input vector up to a large value N.
 
 The analysis involves instrumenting the code with the time module, ensuring reproducible results by setting a random seed, and performing multiple executions for each vector size to compute average execution times and confidence intervals. Results will be visualized through graphic correlating vector size with average execution time, including error bars to represent confidence intervals. 
 
