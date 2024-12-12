@@ -19,7 +19,7 @@ The analysis involves instrumenting the code with the time module, ensuring repr
 > © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
-### [Video explaining the activity](https://www.loom.com)
+### [Video explaining the activity](https://www.loom.com/share/90f870f1390f4fc4ab92a8494eb58f98?sid=0b5ea1d5-4d07-4cdf-ab67-3e156f4ae125)
 
 ---
 
