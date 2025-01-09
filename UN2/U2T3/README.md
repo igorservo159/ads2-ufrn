@@ -1,4 +1,4 @@
-# Evaluating Dijkstra and Kruskal Algorithms:busts_in_silhouette:
+# Evaluating Dijkstra and Kruskal Algorithms :busts_in_silhouette:
 
 ## Objective: Study the implementation and performance of Dijkstra and Kruskal algorithms to find shortest paths and optimal infrastructure layouts of Natal-RN in Brazil.
 
