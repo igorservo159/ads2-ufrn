@@ -27,8 +27,8 @@ The analysis of Dijkstra algorithm will compare Networkx and Dijkstra with min h
 
 In the [Dijkstra Jupyter Notebook](./dijkstra.ipynb), we started by selecting 10 random origin-destination node pairs within the city of Natal-RN, ensuring a minimum distance of 5 km between them. We then computed the shortest paths for these pairs using NetworkX's Dijkstra algorithm. To obtain reliable results, the process was repeated 100 times, resulting in:
 
-- **Mean execution time:** **1.6702 seconds**
-- **Standard deviation:** **0.3220 seconds**
+- **Mean execution time:** **1.7590 seconds**
+- **Standard deviation:** **0.3743 seconds**
 
 The graph below illustrates this performance:
 
@@ -50,8 +50,8 @@ Next, we implemented a custom version of the Dijkstra algorithm using a min-heap
 
 Similar to the previous approach, we repeated the execution 100 times to ensure reliability. The results were as follows:
 
-- **Mean execution time:** **3.5092 seconds**
-- **Standard deviation:** **0.6901 seconds**
+- **Mean execution time:** **3.7937 seconds**
+- **Standard deviation:** **0.7131 seconds**
 
 The graph below illustrates this performance:
 
