@@ -19,7 +19,8 @@ The analysis of the Dijkstra algorithm involves comparing the NetworkX implement
 > © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
-### [Video explaining the activity](https://www.loom.com)
+### [Video explaining Dijkstra](https://www.loom.com/share/be3f7365118748e4aae28c52f6a1b9f0?sid=4b3871a9-102b-4997-a0c5-5b97fbc63a55)
+### [Video explaining Dijkstra](https://www.loom.com/share/39d4ed0ecf5549dca9107a6e0cb40942?sid=ed82e960-1ca5-4a4b-a303-0706eedcf227)
 
 ---
 
@@ -77,18 +78,16 @@ Firstly, we get Natal multigraph and tourist points of interests (POIs) using `o
 
 - The base graph represents the entire road network of the city, with gray lines depicting individual roads.
 - Key tourist attractions are marked as **Points of Interest (POIs)**, linked to the nearest nodes in the road network:
-   - **Morro do Careca** (blue),
+   - **Arena das Dunas** (orange),
+   - **Parque das Dunas** (lime),
    - **Forte dos Reis Magos** (green),
-   - **Praia dos Artistas** (purple),
-   - **Shopping Artesanato Vilarte** (pink),
-   - **Centro de Turismo** (orange),
-   - **Museu Câmara Cascudo** (cyan),
    - **Parque da Cidade** (yellow),
-   - **Farol de Mãe Luiza** (red).
+   - **Museu Câmara Cascudo** (cyan),
+   - **Morro do Careca** (blue).
 
 - The **red edges** on the graph indicate the shortest paths between POIs that form part of the MST. The calculation of these paths was based on road lengths as weights.
 
 - Considering the tourist dynamics in Natal, the route likely begins in **Ponta Negra**, home to the **Morro do Careca**. This area is a common starting point for visitors, given its popularity and proximity to various accommodations.
 
-This visualization highlights the connectivity of Natal’s tourist attractions, aiding in the optimization of routes for tourism or logistical purposes. The total length of the computed minimum spanning tree is **24,047 meters**.
+This visualization highlights the connectivity of Natal’s tourist attractions, aiding in the optimization of routes for tourism or logistical purposes. The total length of the computed minimum spanning tree is **21970**.
 
