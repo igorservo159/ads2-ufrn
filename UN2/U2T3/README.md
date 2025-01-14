@@ -92,4 +92,3 @@ Firstly, we get Natal multigraph and tourist points of interests (POIs) using `o
 
 This visualization highlights the connectivity of Natal’s tourist attractions, aiding in the optimization of routes for tourism or logistical purposes. The total length of the computed minimum spanning tree is **24,047 meters**.
 
-
