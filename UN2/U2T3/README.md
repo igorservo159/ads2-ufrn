@@ -20,7 +20,7 @@ The analysis of the Dijkstra algorithm involves comparing the NetworkX implement
 > SPDX-License-Identifier: MIT
 
 ### [Video explaining Dijkstra](https://www.loom.com/share/be3f7365118748e4aae28c52f6a1b9f0?sid=4b3871a9-102b-4997-a0c5-5b97fbc63a55)
-### [Video explaining Dijkstra](https://www.loom.com/share/39d4ed0ecf5549dca9107a6e0cb40942?sid=ed82e960-1ca5-4a4b-a303-0706eedcf227)
+### [Video explaining Kruskal](https://www.loom.com/share/9283aa2734254afb884cd58a88dbd0ab?sid=6ee2dadb-53b6-4dcb-91db-b0db519fe922)
 
 ---
 
