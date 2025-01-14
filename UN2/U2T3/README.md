@@ -1,8 +1,8 @@
-# Evaluating Dijkstra and Kruskal Algorithms :busts_in_silhouette:
+# Analysis of Dijkstra and Kruskal Algorithms :busts_in_silhouette:
 
-## Objective: Study the implementation and performance of Dijkstra and Kruskal algorithms to find shortest paths and optimal infrastructure layouts of Natal-RN in Brazil.
+## Objective: Analyze the implementation and performance of Dijkstra and Kruskal algorithms for finding shortest paths and designing optimal infrastructure layouts in Natal-RN, Brazil.
 
-The analysis of Dijkstra algorithm will compare Networkx and Dijkstra with min heap implementations to find the shortest paths between ten pair of origin-destination nodes in Natal-RN city graph separed by a minimum distance of 5 km. 
+The analysis of the Dijkstra algorithm involves comparing the NetworkX implementation with a custom Dijkstra implementation using a min-heap. This comparison will identify the shortest paths between ten pairs of origin-destination nodes in the Natal-RN city graph, ensuring each pair is separated by a minimum distance of 5 km. For the Kruskal algorithm, it will be utilized to construct a Minimum Spanning Tree (MST) among the city's tourist attractions, which will serve as a basis for optimizing transportation routes, improving accessibility, and designing efficient guided tour itineraries that minimize travel costs and time between key locations.
 
 > ## Federal University of Rio Grande do Norte  
 > ## Technology Center  
@@ -66,3 +66,30 @@ Here are the computed paths for the 10 node pairs:
 > **Dijkstra Shortest Path Solution**
 
 Although the custom implementation using a min-heap was expected to outperform NetworkX's Dijkstra algorithm due to its theoretically lower complexity, the observed results show a higher average execution time. This discrepancy can be attributed to several factors: the NetworkX implementation likely benefits from internal optimizations written in low-level languages such as C or Cython, whereas the custom implementation, written in Python, incurs additional overhead. Additionally, the smaller size of the graph used in this analysis may reduce the impact of the theoretical advantages of the min-heap structure, making the implementation overhead more pronounced. Further optimizations or testing on larger and more complex graphs could provide a better understanding of the performance gap.
+
+## Using Kruskal to calculate MST of tourist points of interests of Natal city
+
+Firstly, we get Natal multigraph and tourist points of interests (POIs) using `osmnx` and then we generate a complete graph with smallest routes between POIs using NetworkX `shortest_path` dijkstra function with road length as the weight. Next, Kruskal's algorithm is utilized on this complete graph to determine the Minimum Spanning Tree (MST). The MST links all the POIs while minimizing the total road distance, offering an optimized route for visiting all attractions efficiently. The resulting visualization is shown below:
+
+![Minimum Spanning Tree Graph](./imgs/mst_visualization.png)
+
+> **Minimum Spanning Tree Graph**
+
+- The base graph represents the entire road network of the city, with gray lines depicting individual roads.
+- Key tourist attractions are marked as **Points of Interest (POIs)**, linked to the nearest nodes in the road network:
+   - **Morro do Careca** (blue),
+   - **Forte dos Reis Magos** (green),
+   - **Praia dos Artistas** (purple),
+   - **Shopping Artesanato Vilarte** (pink),
+   - **Centro de Turismo** (orange),
+   - **Museu Câmara Cascudo** (cyan),
+   - **Parque da Cidade** (yellow),
+   - **Farol de Mãe Luiza** (red).
+
+- The **red edges** on the graph indicate the shortest paths between POIs that form part of the MST. The calculation of these paths was based on road lengths as weights.
+
+- Considering the tourist dynamics in Natal, the route likely begins in **Ponta Negra**, home to the **Morro do Careca**. This area is a common starting point for visitors, given its popularity and proximity to various accommodations.
+
+This visualization highlights the connectivity of Natal’s tourist attractions, aiding in the optimization of routes for tourism or logistical purposes. The total length of the computed minimum spanning tree is **24,047 meters**.
+
+
