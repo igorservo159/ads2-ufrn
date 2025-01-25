@@ -306,7 +306,7 @@ This graph reveals the multidisciplinary nature of Bitcoin discourse, linking it
 
 The network visualization bellow for Bitcoin-related articles from 2018 showcases the giant component, focusing on the main cluster of interconnected terms. The 25 nodes with the highest degree centrality are highlighted, representing the most influential terms in the discourse at the time. Node sizes are proportional to their degree centrality, while distinct colors indicate thematic communities, revealing different facets of the Bitcoin narrative.
 
-![Main component degree centrality graph of articles from 2018](./imgs/2018_ego_bitcoin_graph.svg)
+![Main component degree centrality graph of articles from 2018](./imgs/main_component_degree_centrality_2018.png)
 
 > Main component degree centrality graph of articles from 2018
 
@@ -322,7 +322,7 @@ Overall, the comparison illustrates a transition from a focus on Bitcoin’s tec
 
 ### 🕸️ Network interactive graph visualization
 
-![Network interactive graph visualization](./imgs/print_gephi.webp🕸️ Network interactive graph visualization)
+![Network interactive graph visualization](./imgs/print_gephi.webp)
 
 Click [here](https://igorservo159.github.io/Bitcoin_News_Articles_Network/) to go to the interactive graph visualization of the complete graph network using the last 200 articles from The Guardian.
 
