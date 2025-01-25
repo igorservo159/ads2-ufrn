@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "./images/bitcoin.png",
+    "link": "",
+    "text": "Joao Igor Ramos de Lima"
+  },
+  "text": {
+    "more": "Discover the intricate world of Bitcoin through an interactive graph network built from articles obtained via The Guardian API. Using advanced Natural Language Processing (NLP), this project identifies and visualizes relationships between key entities, topics, and trends in Bitcoin-related news. Explore clusters of information, track connections between significant players, and gain valuable insights into the evolving narrative of cryptocurrency. Powered by the Sigma Explorer plugin, this dynamic interface offers a unique perspective on Bitcoin\u0027s global impact.",
+    "intro": "Interactive graph visualization of Bitcoin-related articles from The Guardian, using NLP to uncover key entities, topics, and trends.",
+    "title": "Bitcoin Graph Network: Insights from News Articles"
+  },
+  "legend": {
+    "edgeLabel": "Connection Between Two Nodes",
+    "colorLabel": "Community",
+    "nodeLabel": "Noun"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Modularity Class",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "Degree"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
