@@ -19,3 +19,4 @@ A description
 > © 2024 João Igor Ramos de Lima.  
 > SPDX-License-Identifier: MIT
 
+![2018 Bitcoin Network](./imgs/2018_ego_bitcoin_graph.svg)
